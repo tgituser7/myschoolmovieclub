@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0b1e3d;
+  --color-blue: #2f6fed;
+  --color-blue-dark: #1e52c9;
+  --color-sky: #eaf3ff;
+  --color-sky-2: #f4f9ff;
+  --color-orange: #ff7a1a;
+  --color-orange-dark: #ea6a0a;
+  --color-slate: #5b6b83;
+  --color-slate-dark: #33415c;
+
+  --color-cat-red: #f0506e;
+  --color-cat-green: #22c55e;
+  --color-cat-blue: #3b82f6;
+  --color-cat-purple: #8b5cf6;
+  --color-cat-orange: #f5920b;
+  --color-cat-teal: #14b8a6;
+  --color-cat-gold: #eab308;
+
+  --font-display: "var(--font-display-src)", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "var(--font-sans-src)", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-soft: 0 10px 30px -12px rgb(15 30 61 / 0.12);
+  --shadow-card: 0 18px 40px -18px rgb(15 30 61 / 0.18);
+  --shadow-button: 0 12px 24px -8px rgb(47 111 237 / 0.45);
+}
+
+html {
+  background: #ffffff;
+}
+
+body {
+  background: #ffffff;
+}
+
+::selection {
+  background: var(--color-blue);
+  color: white;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
