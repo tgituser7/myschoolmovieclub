@@ -1,7 +1,7 @@
 import { ChevronRightIcon } from "./icons";
 
 const baseClasses =
-  "rounded-xl border border-slate/20 bg-sky-2 px-3.5 py-2.5 text-sm text-navy placeholder:text-slate/60 focus:border-blue focus:outline-none";
+  "rounded-xl border-2 border-navy/25 bg-white px-3.5 py-2.5 text-sm text-navy placeholder:text-slate/60 focus:border-navy focus:outline-none";
 
 export function Field({
   label,
@@ -18,7 +18,7 @@ export function Field({
 }) {
   return (
     <label className="grid gap-1.5">
-      <span className="font-sans text-xs font-semibold uppercase tracking-wide text-slate">
+      <span className="font-sans text-xs font-bold uppercase tracking-wide text-navy/70">
         {label}
       </span>
       <input
@@ -47,7 +47,7 @@ export function TextAreaField({
 }) {
   return (
     <label className="grid gap-1.5">
-      <span className="font-sans text-xs font-semibold uppercase tracking-wide text-slate">
+      <span className="font-sans text-xs font-bold uppercase tracking-wide text-navy/70">
         {label}
       </span>
       <textarea
@@ -78,7 +78,7 @@ export function SelectField({
 }) {
   return (
     <label className="grid gap-1.5">
-      <span className="font-sans text-xs font-semibold uppercase tracking-wide text-slate">
+      <span className="font-sans text-xs font-bold uppercase tracking-wide text-navy/70">
         {label}
       </span>
       <div className="relative">

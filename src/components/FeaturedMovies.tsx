@@ -50,39 +50,41 @@ const movies: Movie[] = [
 
 export default function FeaturedMovies() {
   return (
-    <section id="movies" className="scroll-mt-20 bg-white py-16 sm:py-20">
+    <section id="movies" className="scroll-mt-20 bg-cream py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <div className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue text-white">
+              <span className="flex h-10 w-10 items-center justify-center rounded-lg border-2 border-navy bg-blue text-white shadow-hard-sm">
                 <ReelIcon className="h-5 w-5" />
               </span>
-              <h2 className="font-display text-3xl font-extrabold text-navy sm:text-[2.2rem]">
+              <h2 className="font-display text-3xl font-extrabold text-navy sm:text-[2.4rem]">
                 Featured Movies
               </h2>
             </div>
-            <p className="mt-2 text-balance text-sm text-slate">
+            <p className="mt-2 text-balance text-sm text-slate-dark">
               Handpicked movies that inspire, educate and make a difference.
             </p>
           </div>
           <a
             href="#movies"
-            className="flex items-center gap-1 font-sans text-sm font-semibold text-blue hover:text-blue-dark"
+            className="flex items-center gap-1 rounded-full border-2 border-navy bg-white px-4 py-2 font-display text-sm font-bold text-navy shadow-hard-sm transition-transform hover:-translate-y-0.5"
           >
             View All Movies
             <ChevronRightIcon className="h-4 w-4" />
           </a>
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {movies.map((m) => (
+        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {movies.map((m, i) => (
             <a
               key={m.title}
               href="#join"
-              className="group overflow-hidden rounded-2xl bg-white shadow-soft transition-transform hover:-translate-y-1"
+              className={`group overflow-hidden rounded-2xl border-2 border-navy bg-white shadow-hard transition-transform hover:-translate-y-1 hover:rotate-0 ${
+                i % 2 === 0 ? "sm:rotate-1" : "sm:-rotate-1"
+              }`}
             >
-              <div className="relative aspect-video overflow-hidden bg-navy">
+              <div className="relative aspect-video overflow-hidden border-b-2 border-navy bg-navy">
                 {m.image ? (
                   <>
                     <Image
@@ -110,13 +112,13 @@ export default function FeaturedMovies() {
                   </span>
                 </div>
                 {m.duration ? (
-                  <span className="absolute bottom-2 right-2 rounded-md bg-navy/80 px-1.5 py-0.5 font-sans text-[11px] font-semibold text-white">
+                  <span className="absolute bottom-2 right-2 rounded-md border-2 border-navy bg-yellow px-1.5 py-0.5 font-display text-[11px] font-extrabold text-navy">
                     {m.duration}
                   </span>
                 ) : null}
               </div>
-              <div className="p-3.5">
-                <p className="font-sans text-sm font-semibold leading-snug text-slate-dark">
+              <div className="p-4">
+                <p className="font-display text-sm font-bold leading-snug text-navy">
                   {m.title}
                 </p>
               </div>

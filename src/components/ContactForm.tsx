@@ -45,7 +45,7 @@ export default function ContactForm() {
       />
       <button
         type="submit"
-        className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-blue px-6 py-3.5 font-sans text-sm font-semibold text-white shadow-button transition-transform hover:-translate-y-0.5"
+        className="mt-2 inline-flex items-center justify-center gap-2 rounded-full border-2 border-navy bg-orange px-6 py-3.5 font-display text-sm font-extrabold text-navy shadow-hard-sm transition-transform hover:-translate-y-1 hover:shadow-hard"
       >
         Send Message
         <ChevronRightIcon className="h-4 w-4" />

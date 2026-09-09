@@ -13,9 +13,10 @@ export default function SchoolRegistrationForm() {
   }
 
   return (
-    <section className="bg-white py-16 sm:py-20">
-      <div className="mx-auto max-w-3xl px-6 lg:px-10">
-        <div className="rounded-2xl bg-sky-2 p-8 shadow-card sm:p-10">
+    <section className="relative overflow-hidden bg-sky py-16 sm:py-24">
+      <div className="dots pointer-events-none absolute inset-0 text-navy/[0.08]" aria-hidden />
+      <div className="relative mx-auto max-w-3xl px-6 lg:px-10">
+        <div className="rounded-2xl border-2 border-navy bg-white p-8 shadow-hard sm:p-10">
           {sent ? (
             <div className="flex flex-col items-center py-10 text-center">
               <span className="flex h-14 w-14 items-center justify-center rounded-full bg-blue/10 text-blue">
@@ -74,7 +75,7 @@ export default function SchoolRegistrationForm() {
               />
               <button
                 type="submit"
-                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-blue px-6 py-3.5 font-sans text-sm font-semibold text-white shadow-button transition-transform hover:-translate-y-0.5"
+                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full border-2 border-navy bg-orange px-6 py-3.5 font-display text-sm font-extrabold text-navy shadow-hard-sm transition-transform hover:-translate-y-1 hover:shadow-hard"
               >
                 Submit Registration
                 <ChevronRightIcon className="h-4 w-4" />

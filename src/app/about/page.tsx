@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import PageBanner from "@/components/PageBanner";
-import Philosophy from "@/components/Philosophy";
+import Mission from "@/components/Mission";
 import Advantages from "@/components/Advantages";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
   title: "About Us — My School Movie Club",
   description:
-    "Why film belongs in the classroom, and what My School Movie Club gives back to your campus.",
+    "Our mission is to educate, inspire, and empower students through the power of cinema.",
 };
 
 export default function AboutPage() {
@@ -15,10 +15,10 @@ export default function AboutPage() {
     <>
       <PageBanner
         kicker="About Us"
-        title="Why we believe movies belong in the classroom"
-        subtitle="My School Movie Club is a membership programme built on one idea: the same story that entertains a child can also teach them something that lasts."
+        title="Educate. Inspire. Empower."
+        subtitle="A membership programme built on one idea: the same story that entertains a child can also teach them something that lasts."
       />
-      <Philosophy />
+      <Mission />
       <Advantages />
       <CTABanner
         title="See it for yourself"

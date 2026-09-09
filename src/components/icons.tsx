@@ -331,6 +331,73 @@ export function CloseIcon(props: IconProps) {
   );
 }
 
+export function PopcornIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <circle cx="8.6" cy="7.6" r="2.1" />
+      <circle cx="12" cy="6.3" r="2.4" />
+      <circle cx="15.4" cy="7.6" r="2.1" />
+      <path d="M7.6 9.8h8.8l-1.1 10.7a1.9 1.9 0 01-1.9 1.7h-2.8a1.9 1.9 0 01-1.9-1.7L7.6 9.8z" />
+      <path d="M9.9 10v11.8M14.1 10v11.8" strokeWidth={1.2} />
+    </Base>
+  );
+}
+
+export function BoltIcon(props: IconProps) {
+  return (
+    <Base {...props} fill="currentColor" stroke="none">
+      <path d="M13.3 2L5 14h5.6l-1 8L18 10h-5.6l0.9-8z" />
+    </Base>
+  );
+}
+
+export function GlobeIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <circle cx="12" cy="12" r="8.5" />
+      <ellipse cx="12" cy="12" rx="3.6" ry="8.5" />
+      <path d="M3.7 9h16.6M3.7 15h16.6" />
+    </Base>
+  );
+}
+
+export function ChatIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <path d="M4 5.5h16v11H9.5L6 19.8V16.5H4v-11z" />
+      <path d="M8 9.5h8M8 12.5h5" />
+    </Base>
+  );
+}
+
+export function InstagramIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+      <circle cx="12" cy="12" r="4.2" />
+      <circle cx="17" cy="7" r="1" fill="currentColor" stroke="none" />
+    </Base>
+  );
+}
+
+export function FacebookIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M14 8.5h-1.5A2 2 0 0010.5 10.5v2H9v2.5h1.5V21h2.5v-6h2l.3-2.5h-2.3v-1.6c0-.6.3-1 .9-1H14V8.5z" fill="currentColor" stroke="none" />
+    </Base>
+  );
+}
+
+export function YouTubeIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <rect x="2.5" y="6" width="19" height="12" rx="4" />
+      <path d="M10.3 9.8l5 2.2-5 2.2v-4.4z" fill="currentColor" stroke="none" />
+    </Base>
+  );
+}
+
 export function SearchIcon(props: IconProps) {
   return (
     <Base {...props}>

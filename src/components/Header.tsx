@@ -13,7 +13,6 @@ const links = [
   { href: "/events", label: "Events" },
   { href: "/services", label: "Services" },
   { href: "/associations", label: "Associations" },
-  { href: "/join-us", label: "Join Us" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -36,19 +35,19 @@ export default function Header() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate/10 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex max-w-[1600px] items-center gap-4 px-6 py-3.5 lg:px-10">
+    <header className="sticky top-0 z-50 border-b-[3px] border-navy bg-cream/95 backdrop-blur">
+      <div className="mx-auto flex max-w-[1600px] items-center gap-3 px-6 py-3 lg:px-10">
         <Logo />
 
-        <nav className="ml-auto hidden items-center gap-x-5 lg:flex">
+        <nav className="ml-auto hidden items-center gap-x-1 xl:flex">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className={`relative shrink-0 whitespace-nowrap pb-1 font-sans text-[13.5px] font-medium transition-colors ${
+              className={`shrink-0 whitespace-nowrap rounded-full px-3.5 py-2 font-sans text-[13.5px] font-bold uppercase tracking-wide transition-colors ${
                 isActive(l.href)
-                  ? "text-blue after:absolute after:-bottom-[1px] after:left-0 after:h-[2px] after:w-full after:bg-blue"
-                  : "text-slate-dark hover:text-blue"
+                  ? "bg-navy text-white"
+                  : "text-navy hover:bg-navy/10"
               }`}
             >
               {l.label}
@@ -56,34 +55,47 @@ export default function Header() {
           ))}
         </nav>
 
+        <Link
+          href="/join-us"
+          className="ml-auto hidden shrink-0 items-center gap-1.5 rounded-full border-2 border-navy bg-orange px-4 py-2 font-display text-[13.5px] font-extrabold uppercase tracking-wide text-navy shadow-hard-sm transition-transform hover:-translate-y-0.5 hover:shadow-hard xl:ml-3 xl:flex"
+        >
+          Join Us
+        </Link>
+
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          className="ml-auto flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-navy transition-colors hover:bg-sky-2 lg:hidden"
+          className="ml-auto flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-navy text-navy transition-colors hover:bg-navy/10 xl:hidden"
         >
           {open ? <CloseIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
         </button>
       </div>
 
       <div
-        className={`grid overflow-hidden bg-white transition-[grid-template-rows] duration-300 ease-out lg:hidden ${
-          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        className={`grid overflow-hidden border-navy bg-cream transition-[grid-template-rows] duration-300 ease-out xl:hidden ${
+          open ? "grid-rows-[1fr] border-t-[3px]" : "grid-rows-[0fr]"
         }`}
       >
-        <nav className="min-h-0 overflow-hidden border-t border-slate/10 px-6 py-2">
+        <nav className="min-h-0 overflow-hidden px-6 py-2">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className={`block border-b border-slate/10 py-3.5 font-sans text-base font-medium last:border-none ${
-                isActive(l.href) ? "text-blue" : "text-slate-dark"
+              className={`block border-b-2 border-navy/10 py-3.5 font-display text-base font-bold last:border-none ${
+                isActive(l.href) ? "text-orange" : "text-navy"
               }`}
             >
               {l.label}
             </Link>
           ))}
+          <Link
+            href="/join-us"
+            className="my-4 flex items-center justify-center rounded-full border-2 border-navy bg-orange py-3 font-display text-sm font-extrabold uppercase tracking-wide text-navy shadow-hard-sm"
+          >
+            Join Us
+          </Link>
         </nav>
       </div>
     </header>

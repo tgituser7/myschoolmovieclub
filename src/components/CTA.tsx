@@ -24,32 +24,32 @@ export default function CTA() {
   return (
     <section
       id="join"
-      className="scroll-mt-20 bg-gradient-to-b from-white to-sky-2 py-16 sm:py-24"
+      className="grain scroll-mt-20 bg-blue py-16 sm:py-24"
     >
       <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[1fr_1.1fr] lg:gap-16 lg:px-10">
         <div>
-          <p className="font-sans text-sm font-bold uppercase tracking-[0.15em] text-blue">
+          <p className="inline-block -rotate-1 rounded-full border-2 border-navy bg-yellow px-3 py-1 font-display text-xs font-extrabold uppercase tracking-[0.15em] text-navy">
             Reserve Your Seat
           </p>
-          <h2 className="mt-3 text-balance font-display text-3xl font-extrabold text-navy sm:text-4xl">
+          <h2 className="mt-4 text-balance font-display text-3xl font-extrabold text-white sm:text-4xl">
             Bring My School Movie Club to your campus
           </h2>
-          <p className="mt-4 max-w-md text-balance leading-relaxed text-slate">
+          <p className="mt-4 max-w-md text-balance leading-relaxed text-white/80">
             Tell us a little about your school and we&apos;ll follow up with
             a plan — subscription, single-film tour, or your own projector
             with our content boxes.
           </p>
-          <div className="mt-7 flex items-center gap-3 text-slate">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-orange/10 text-orange">
+          <div className="mt-7 flex items-center gap-3 text-white">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-navy bg-orange text-navy">
               <TicketIcon className="h-4 w-4" />
             </span>
-            <p className="text-sm font-medium">
+            <p className="text-sm font-bold">
               No commitment required to enquire
             </p>
           </div>
         </div>
 
-        <div className="rounded-2xl bg-white p-8 shadow-card">
+        <div className="rounded-2xl border-2 border-navy bg-white p-8 shadow-hard">
           {sent ? (
             <div className="flex h-full flex-col items-center justify-center py-10 text-center">
               <span className="flex h-14 w-14 items-center justify-center rounded-full bg-blue/10 text-blue">
@@ -96,9 +96,9 @@ export default function CTA() {
               />
               <button
                 type="submit"
-                className="group mt-2 inline-flex items-center justify-center gap-2.5 rounded-full bg-blue py-3 pl-3 pr-6 font-sans text-sm font-semibold text-white shadow-button transition-transform hover:-translate-y-0.5"
+                className="group mt-2 inline-flex items-center justify-center gap-2.5 rounded-full border-2 border-navy bg-orange py-3 pl-3 pr-6 font-display text-sm font-extrabold text-navy shadow-hard-sm transition-transform hover:-translate-y-1 hover:shadow-hard"
               >
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white text-blue">
+                <span className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-navy bg-white text-navy">
                   <PlayFilledIcon className="h-3 w-3 translate-x-[1px]" />
                 </span>
                 Request a Callback

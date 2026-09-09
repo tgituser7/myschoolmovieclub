@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Logo from "./Logo";
+import WaveDivider from "./WaveDivider";
 
 const links = [
   { href: "/about", label: "About" },
@@ -13,29 +14,32 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate/10 bg-navy py-14">
-      <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 px-6 text-center lg:flex-row lg:justify-between lg:px-10 lg:text-left">
-        <div className="rounded-xl bg-white/95 px-3 py-2">
-          <Logo />
+    <footer className="border-t-[3px] border-navy">
+      <WaveDivider color="#0b1e3d" />
+      <div className="grain bg-navy py-14">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 px-6 text-center lg:flex-row lg:justify-between lg:px-10 lg:text-left">
+          <div className="-rotate-1 rounded-xl border-2 border-navy bg-white px-3 py-2 shadow-hard-orange">
+            <Logo />
+          </div>
+
+          <nav className="flex flex-wrap items-center justify-center gap-x-2 gap-y-2">
+            {links.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="rounded-full px-3 py-1.5 font-display text-sm font-bold text-white/80 transition-colors hover:bg-white/10 hover:text-orange"
+              >
+                {l.label}
+              </Link>
+            ))}
+          </nav>
         </div>
 
-        <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-          {links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className="font-sans text-sm text-white/70 transition-colors hover:text-orange"
-            >
-              {l.label}
-            </Link>
-          ))}
-        </nav>
+        <p className="mt-10 text-center font-sans text-xs text-white/40">
+          © {new Date().getFullYear()} My School Movie Club. A membership
+          programme bringing curated cinema into school life.
+        </p>
       </div>
-
-      <p className="mt-10 text-center font-sans text-xs text-white/40">
-        © {new Date().getFullYear()} My School Movie Club. A membership
-        programme bringing curated cinema into school life.
-      </p>
     </footer>
   );
 }

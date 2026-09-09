@@ -6,8 +6,11 @@
   --color-blue-dark: #1e52c9;
   --color-sky: #eaf3ff;
   --color-sky-2: #f4f9ff;
-  --color-orange: #ff7a1a;
-  --color-orange-dark: #ea6a0a;
+  --color-cream: #fff2df;
+  --color-cream-2: #ffe6bf;
+  --color-orange: #ff5a1f;
+  --color-orange-dark: #e8460d;
+  --color-yellow: #ffc63c;
   --color-slate: #5b6b83;
   --color-slate-dark: #33415c;
 
@@ -44,4 +47,78 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* ---------- Paper grain texture ---------- */
+.grain {
+  position: relative;
+  isolation: isolate;
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  z-index: 5;
+}
+
+/* ---------- Halftone dot field ---------- */
+.dots {
+  background-image: radial-gradient(currentColor 1.6px, transparent 1.8px);
+  background-size: 18px 18px;
+}
+
+/* ---------- Hard offset "sticker" shadows ---------- */
+.shadow-hard {
+  box-shadow: 7px 7px 0 0 var(--color-navy);
+}
+.shadow-hard-sm {
+  box-shadow: 4px 4px 0 0 var(--color-navy);
+}
+.shadow-hard-orange {
+  box-shadow: 7px 7px 0 0 var(--color-orange);
+}
+.shadow-hard-blue {
+  box-shadow: 7px 7px 0 0 var(--color-blue);
+}
+.shadow-hard-white {
+  box-shadow: 7px 7px 0 0 #ffffff;
+}
+
+/* ---------- Marquee ticker ---------- */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee-scroll 28s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* ---------- Scribble underline flourish ---------- */
+.scribble-underline {
+  position: relative;
+  display: inline-block;
+}
+.scribble-underline::after {
+  content: "";
+  position: absolute;
+  left: -0.05em;
+  right: -0.05em;
+  bottom: -0.08em;
+  height: 0.28em;
+  background: var(--color-yellow);
+  z-index: -1;
+  transform: rotate(-1deg);
 }

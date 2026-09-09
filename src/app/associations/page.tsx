@@ -16,10 +16,10 @@ export const metadata: Metadata = {
 };
 
 const curricula = [
-  { label: "CBSE", icon: BookIcon },
-  { label: "ICSE", icon: BankIcon },
-  { label: "State Boards", icon: UsersIcon },
-  { label: "IB & International", icon: ShieldIcon },
+  { label: "CBSE", icon: BookIcon, bg: "bg-cat-blue" },
+  { label: "ICSE", icon: BankIcon, bg: "bg-cat-purple" },
+  { label: "State Boards", icon: UsersIcon, bg: "bg-cat-teal" },
+  { label: "IB & International", icon: ShieldIcon, bg: "bg-cat-orange" },
 ];
 
 const network = [
@@ -27,22 +27,19 @@ const network = [
     title: "Partner Schools",
     desc: "A growing network of schools across regions and boards, sharing feedback that shapes each term's catalogue.",
     icon: UsersIcon,
-    bg: "bg-cat-blue/10",
-    fg: "text-cat-blue",
+    bg: "bg-cat-blue",
   },
   {
     title: "Content Advisory Panel",
     desc: "Educators and child-development consultants review every title before it enters the catalogue.",
     icon: ShieldIcon,
-    bg: "bg-cat-teal/10",
-    fg: "text-cat-teal",
+    bg: "bg-cat-teal",
   },
   {
     title: "Social-Cause Partners",
     desc: "We work alongside education-focused NGOs to source and co-create films on social causes.",
     icon: HandsIcon,
-    bg: "bg-cat-red/10",
-    fg: "text-cat-red",
+    bg: "bg-cat-red",
   },
 ];
 
@@ -55,25 +52,27 @@ export default function AssociationsPage() {
         subtitle="Our catalogue and screening formats are shaped by the curricula schools already follow and the people who review our content."
       />
 
-      <section className="bg-white py-16 sm:py-20">
+      <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <h2 className="text-center font-display text-2xl font-extrabold text-navy sm:text-3xl">
             Content mapped to major curricula
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-balance text-center leading-relaxed text-slate">
+          <p className="mx-auto mt-3 max-w-2xl text-balance text-center leading-relaxed text-slate-dark">
             Educational titles are tagged by subject and stage so they slot
             into whichever curriculum your school follows.
           </p>
           <div className="mt-10 grid grid-cols-2 gap-5 sm:grid-cols-4">
-            {curricula.map((c) => (
+            {curricula.map((c, i) => (
               <div
                 key={c.label}
-                className="flex flex-col items-center gap-3 rounded-2xl bg-sky-2 px-4 py-8 text-center shadow-soft"
+                className={`flex flex-col items-center gap-3 rounded-2xl border-2 border-navy bg-cream px-4 py-8 text-center shadow-hard-sm transition-transform hover:-translate-y-1 ${
+                  i % 2 === 0 ? "sm:rotate-1" : "sm:-rotate-1"
+                }`}
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-blue shadow-soft">
+                <span className={`flex h-12 w-12 items-center justify-center rounded-full border-2 border-navy text-white ${c.bg}`}>
                   <c.icon className="h-5 w-5" />
                 </span>
-                <p className="font-display text-sm font-bold text-navy">
+                <p className="font-display text-sm font-extrabold text-navy">
                   {c.label}
                 </p>
               </div>
@@ -82,24 +81,27 @@ export default function AssociationsPage() {
         </div>
       </section>
 
-      <section className="bg-sky-2 py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      <section className="relative overflow-hidden bg-sky py-16 sm:py-24">
+        <div className="dots pointer-events-none absolute inset-0 text-navy/[0.08]" aria-hidden />
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
           <h2 className="text-center font-display text-2xl font-extrabold text-navy sm:text-3xl">
             Who we work with
           </h2>
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {network.map((n) => (
+          <div className="mt-10 grid gap-8 lg:grid-cols-3">
+            {network.map((n, i) => (
               <div
                 key={n.title}
-                className="rounded-2xl bg-white p-8 shadow-soft"
+                className={`rounded-2xl border-2 border-navy bg-white p-8 shadow-hard transition-transform hover:-translate-y-1 ${
+                  i % 2 === 0 ? "lg:-rotate-1" : "lg:rotate-1"
+                }`}
               >
-                <span className={`flex h-12 w-12 items-center justify-center rounded-full ${n.bg} ${n.fg}`}>
+                <span className={`flex h-12 w-12 items-center justify-center rounded-full border-2 border-navy text-white ${n.bg}`}>
                   <n.icon className="h-5 w-5" />
                 </span>
-                <h3 className="mt-6 font-display text-lg font-bold text-navy">
+                <h3 className="mt-6 font-display text-lg font-extrabold text-navy">
                   {n.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate">
+                <p className="mt-2 text-sm leading-relaxed text-slate-dark">
                   {n.desc}
                 </p>
               </div>
