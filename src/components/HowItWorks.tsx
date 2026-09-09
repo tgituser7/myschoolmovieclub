@@ -1,11 +1,12 @@
 import { howItWorks } from "@/lib/content";
-import { ReelIcon } from "./icons";
+import { FilmFrameIcon, GraduationCapIcon, TicketIcon } from "./icons";
 
 const accents = [
   { bg: "bg-cat-blue/10", fg: "text-cat-blue" },
   { bg: "bg-cat-purple/10", fg: "text-cat-purple" },
   { bg: "bg-cat-orange/10", fg: "text-cat-orange" },
 ];
+const icons = [GraduationCapIcon, FilmFrameIcon, TicketIcon];
 
 export default function HowItWorks() {
   return (
@@ -25,7 +26,9 @@ export default function HowItWorks() {
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {howItWorks.map((h, i) => (
+          {howItWorks.map((h, i) => {
+            const Icon = icons[i % icons.length];
+            return (
             <div
               key={h.title}
               className="flex flex-col rounded-2xl bg-white p-8 shadow-soft"
@@ -35,7 +38,7 @@ export default function HowItWorks() {
                   {h.kicker}
                 </span>
                 <span className={`flex h-10 w-10 items-center justify-center rounded-full ${accents[i].bg} ${accents[i].fg}`}>
-                  <ReelIcon className="h-5 w-5" />
+                  <Icon className="h-5 w-5" />
                 </span>
               </div>
               <h3 className="font-display text-xl font-bold text-navy">
@@ -45,7 +48,8 @@ export default function HowItWorks() {
                 {h.desc}
               </p>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

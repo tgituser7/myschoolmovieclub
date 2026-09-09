@@ -35,19 +35,19 @@ export const genres = [
 
 export const howItWorks = [
   {
-    kicker: "Option 01",
-    title: "Subscription Package",
-    desc: "The school buys or hires a digital screening system and takes an annual service or subscription, unlocking a constantly refreshed library of films and content.",
+    kicker: "Service 01",
+    title: "In School Movie",
+    desc: "A full-school screening event on your own campus — auditorium or open ground set up with a big screen for the whole student body to watch together.",
   },
   {
-    kicker: "Option 02",
-    title: "Single Movie Tour",
-    desc: "No long-term commitment — the school chooses and books one film at a time, screening it as a standalone event whenever it suits the calendar.",
+    kicker: "Service 02",
+    title: "Classroom Movies",
+    desc: "Bite-sized screenings played right on a classroom smart TV or projector — an easy way to slot a short educational film between lessons.",
   },
   {
-    kicker: "Option 03",
-    title: "Bring Your Own Screen",
-    desc: "Schools with their own projection system need only purchase curated content boxes to show movies and educational programmes.",
+    kicker: "Service 03",
+    title: "Theatre Tours",
+    desc: "Take the class out for the real thing — a partner cinema outing on the big screen, popcorn included, with a guided discussion afterwards.",
   },
 ] as const;
 

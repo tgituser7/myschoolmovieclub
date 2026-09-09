@@ -2,9 +2,19 @@
 
 import { FormEvent, useState } from "react";
 import { ChevronRightIcon, PlayFilledIcon, TicketIcon } from "./icons";
+import { Field, SelectField, TextAreaField } from "./FormField";
+
+const joinOptions = [
+  "Become a Member",
+  "School Registration",
+  "Distributor",
+  "Partner With Us",
+  "Other",
+];
 
 export default function CTA() {
   const [sent, setSent] = useState(false);
+  const [joinAs, setJoinAs] = useState("");
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -55,6 +65,22 @@ export default function CTA() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="grid gap-4">
+              <SelectField
+                label="I'd like to join as"
+                name="joinAs"
+                options={joinOptions}
+                value={joinAs}
+                onChange={setJoinAs}
+                required
+              />
+              {joinAs === "Other" ? (
+                <Field
+                  label="Please specify"
+                  name="joinAsOther"
+                  placeholder="Tell us how you'd like to join"
+                  required
+                />
+              ) : null}
               <div className="grid gap-4 sm:grid-cols-2">
                 <Field label="Your Name" name="name" required />
                 <Field label="School Name" name="school" required />
@@ -63,17 +89,11 @@ export default function CTA() {
                 <Field label="Email" name="email" type="email" required />
                 <Field label="Phone" name="phone" type="tel" />
               </div>
-              <label className="grid gap-1.5">
-                <span className="font-sans text-xs font-semibold uppercase tracking-wide text-slate">
-                  Message (optional)
-                </span>
-                <textarea
-                  name="message"
-                  rows={3}
-                  placeholder="Class sizes, preferred timing, existing equipment..."
-                  className="rounded-xl border border-slate/20 bg-sky-2 px-3.5 py-2.5 text-sm text-navy placeholder:text-slate/60 focus:border-blue focus:outline-none"
-                />
-              </label>
+              <TextAreaField
+                label="Message (optional)"
+                name="message"
+                placeholder="Class sizes, preferred timing, existing equipment..."
+              />
               <button
                 type="submit"
                 className="group mt-2 inline-flex items-center justify-center gap-2.5 rounded-full bg-blue py-3 pl-3 pr-6 font-sans text-sm font-semibold text-white shadow-button transition-transform hover:-translate-y-0.5"
@@ -89,31 +109,5 @@ export default function CTA() {
         </div>
       </div>
     </section>
-  );
-}
-
-function Field({
-  label,
-  name,
-  type = "text",
-  required = false,
-}: {
-  label: string;
-  name: string;
-  type?: string;
-  required?: boolean;
-}) {
-  return (
-    <label className="grid gap-1.5">
-      <span className="font-sans text-xs font-semibold uppercase tracking-wide text-slate">
-        {label}
-      </span>
-      <input
-        type={type}
-        name={name}
-        required={required}
-        className="rounded-xl border border-slate/20 bg-sky-2 px-3.5 py-2.5 text-sm text-navy placeholder:text-slate/60 focus:border-blue focus:outline-none"
-      />
-    </label>
   );
 }

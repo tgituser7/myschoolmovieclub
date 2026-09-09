@@ -269,6 +269,68 @@ export function ArrowRightIcon(props: IconProps) {
   );
 }
 
+export function ShieldIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <path d="M12 3.5l7 3v5c0 5-3 8.3-7 9.5-4-1.2-7-4.5-7-9.5v-5l7-3z" />
+      <path d="M9 12l2 2 4-4.5" />
+    </Base>
+  );
+}
+
+export function UsersIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <circle cx="9" cy="8.5" r="3.2" />
+      <path d="M2.7 19c0-3.3 2.8-5.5 6.3-5.5s6.3 2.2 6.3 5.5" />
+      <circle cx="17" cy="9" r="2.6" />
+      <path d="M15.5 13.6c2.6.3 4.5 2.1 4.8 5.4" />
+    </Base>
+  );
+}
+
+export function MailIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <rect x="3" y="5.5" width="18" height="13" rx="2" />
+      <path d="M4 7l8 6 8-6" />
+    </Base>
+  );
+}
+
+export function PhoneIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <path d="M6 3.5h3l1.5 4-2 1.5a11 11 0 005 5l1.5-2 4 1.5v3a2 2 0 01-2.2 2C10.5 18.7 5.3 13.5 4 7.7A2 2 0 016 3.5z" />
+    </Base>
+  );
+}
+
+export function MapPinIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <path d="M12 21s7-6.6 7-11.5A7 7 0 105 9.5C5 14.4 12 21 12 21z" />
+      <circle cx="12" cy="9.5" r="2.5" />
+    </Base>
+  );
+}
+
+export function MenuIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" />
+    </Base>
+  );
+}
+
+export function CloseIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <path d="M5.5 5.5l13 13M18.5 5.5l-13 13" />
+    </Base>
+  );
+}
+
 export function SearchIcon(props: IconProps) {
   return (
     <Base {...props}>

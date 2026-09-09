@@ -1,12 +1,14 @@
+import Link from "next/link";
 import Logo from "./Logo";
 
 const links = [
-  { href: "#philosophy", label: "Why Film" },
-  { href: "#movies", label: "Movies" },
-  { href: "#categories", label: "Categories" },
-  { href: "#how", label: "How It Works" },
-  { href: "#schedule", label: "Schedule" },
-  { href: "#advantages", label: "About Us" },
+  { href: "/about", label: "About" },
+  { href: "/movies", label: "Movies" },
+  { href: "/events", label: "Events" },
+  { href: "/services", label: "Services" },
+  { href: "/associations", label: "Associations" },
+  { href: "/join-us", label: "Join Us" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Footer() {
@@ -19,13 +21,13 @@ export default function Footer() {
 
         <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
           {links.map((l) => (
-            <a
+            <Link
               key={l.href}
               href={l.href}
               className="font-sans text-sm text-white/70 transition-colors hover:text-orange"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>

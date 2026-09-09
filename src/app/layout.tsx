@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Inter } from "next/font/google";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 const display = Poppins({
@@ -27,7 +29,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${display.variable} ${sans.variable} scroll-smooth`}
     >
       <body className="min-h-full bg-white font-sans text-slate antialiased">
-        {children}
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
