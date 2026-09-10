@@ -1,8 +1,32 @@
 import { howItWorks } from "@/lib/content";
-import { FilmFrameIcon, GraduationCapIcon, LeafIcon, TicketIcon } from "./icons";
+import {
+  ClapperIcon,
+  FilmFrameIcon,
+  GraduationCapIcon,
+  LeafIcon,
+  PersonIcon,
+  ShieldIcon,
+  TicketIcon,
+} from "./icons";
 
-const accents = ["bg-cat-blue", "bg-cat-purple", "bg-cat-orange", "bg-cat-green"];
-const icons = [GraduationCapIcon, FilmFrameIcon, TicketIcon, LeafIcon];
+const accents = [
+  "bg-cat-blue",
+  "bg-cat-purple",
+  "bg-cat-orange",
+  "bg-cat-green",
+  "bg-cat-red",
+  "bg-cat-gold",
+  "bg-cat-teal",
+];
+const icons = [
+  GraduationCapIcon,
+  FilmFrameIcon,
+  TicketIcon,
+  LeafIcon,
+  ClapperIcon,
+  PersonIcon,
+  ShieldIcon,
+];
 
 export default function HowItWorks() {
   return (
@@ -13,7 +37,7 @@ export default function HowItWorks() {
             How It Works
           </p>
           <h2 className="mt-4 text-balance font-display text-3xl font-extrabold text-white sm:text-4xl">
-            Four ways to bring the club to your school
+            Seven ways to bring the club to your school
           </h2>
           <p className="mt-4 text-balance leading-relaxed text-white/70">
             Whatever a school already has in place — or doesn&apos;t —

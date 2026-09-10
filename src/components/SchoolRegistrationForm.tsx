@@ -65,6 +65,9 @@ export default function SchoolRegistrationForm() {
                   "Classroom Movies",
                   "Theatre Tours",
                   "Village and Agriculture Tours",
+                  "Skill Development Workshops",
+                  "Celebrity Management",
+                  "Backstage Technical Support",
                   "Not sure yet",
                 ]}
               />

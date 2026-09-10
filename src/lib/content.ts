@@ -73,6 +73,21 @@ export const howItWorks = [
     title: "Village and Agriculture Tours",
     desc: "Hands-on field trips to partner villages and farms — students see crop cycles, traditional farming methods and rural life firsthand.",
   },
+  {
+    kicker: "Service 05",
+    title: "Skill Development Workshops",
+    desc: "Hands-on sessions in film making, performance art, acting and film editing",
+  },
+  {
+    kicker: "Service 06",
+    title: "Celebrity Management",
+    desc: "We help coordinate guest appearances and celebrity visits for school events, screenings and special occasions.",
+  },
+  {
+    kicker: "Service 07",
+    title: "Backstage Technical Support",
+    desc: "Sound, lighting and projection handled by our crew, so your event runs smoothly from setup to curtain call.",
+  },
 ] as const;
 
 export const schedule = [
