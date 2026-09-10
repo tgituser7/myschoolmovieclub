@@ -82,7 +82,7 @@ export default function AssociationsPage() {
       </section>
 
       <section className="relative overflow-hidden bg-sky py-16 sm:py-24">
-        <div className="dots pointer-events-none absolute inset-0 text-navy/[0.08]" aria-hidden />
+        <div className="grain-texture pointer-events-none absolute inset-0" aria-hidden />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
           <h2 className="text-center font-display text-2xl font-extrabold text-navy sm:text-3xl">
             Who we work with

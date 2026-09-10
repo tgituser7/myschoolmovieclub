@@ -22,7 +22,7 @@ const categories = [
 export default function CategoryPills() {
   return (
     <section id="categories" className="relative overflow-hidden bg-sky py-16 sm:py-24">
-      <div className="dots pointer-events-none absolute inset-0 text-navy/[0.08]" aria-hidden />
+      <div className="grain-texture pointer-events-none absolute inset-0" aria-hidden />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>

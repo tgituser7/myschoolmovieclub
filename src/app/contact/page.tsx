@@ -55,7 +55,7 @@ export default function ContactPage() {
         subtitle="Questions about the club, the catalogue, or a partnership — send us a note and we'll get back to you."
       />
       <section className="relative overflow-hidden bg-sky py-16 sm:py-24">
-        <div className="dots pointer-events-none absolute inset-0 text-navy/[0.08]" aria-hidden />
+        <div className="grain-texture pointer-events-none absolute inset-0" aria-hidden />
         <div className="relative mx-auto max-w-4xl px-6 lg:px-10">
           <h2 className="text-center font-display text-2xl font-extrabold text-navy sm:text-3xl">
             Leadership

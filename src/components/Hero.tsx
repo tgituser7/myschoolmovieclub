@@ -1,13 +1,13 @@
 import { ChevronRightIcon, PlayFilledIcon } from "./icons";
 import HeroArt from "./HeroArt";
-import WaveDivider from "./WaveDivider";
 import Marquee from "./Marquee";
+import BlobField from "./BlobField";
 
 const tickerItems = [
   "In School Movie",
   "Classroom Movies",
   "Theatre Tours",
-  "Curated Since Day One",
+  "Village and Agriculture Tours",
   "Where Movies Meet Education",
 ];
 
@@ -16,19 +16,14 @@ export default function Hero() {
     <>
       <section
         id="top"
-        className="relative overflow-hidden bg-cream pb-20 pt-14 sm:pt-20"
+        className="relative overflow-hidden bg-cream pb-24 pt-14 sm:pt-20"
       >
-        <div
-          aria-hidden
-          className="dots pointer-events-none absolute inset-0 text-navy/[0.07]"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -left-16 top-24 h-64 w-64 rounded-full bg-blue/20 blur-3xl"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -right-10 bottom-0 h-72 w-72 rounded-full bg-orange/20 blur-3xl"
+        <BlobField
+          blobs={[
+            { top: "-8%", left: "-6%", size: 460, color: "var(--color-primary-container)", opacity: 0.9 },
+            { top: "12%", right: "-10%", size: 380, color: "var(--color-secondary-container)", variant: "b", opacity: 0.85 },
+            { bottom: "-14%", left: "22%", size: 320, color: "var(--color-tertiary-container)", opacity: 0.8 },
+          ]}
         />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2 lg:gap-10 lg:px-10">
@@ -63,7 +58,6 @@ export default function Hero() {
         </div>
       </section>
 
-      <WaveDivider color="#0b1e3d" />
       <Marquee items={tickerItems} />
     </>
   );

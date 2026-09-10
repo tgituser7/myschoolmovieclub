@@ -1,4 +1,4 @@
-import { ReelIcon } from "./icons";
+import { TicketIcon } from "./icons";
 
 export default function Marquee({
   items,
@@ -21,7 +21,7 @@ export default function Marquee({
             className={`flex shrink-0 items-center gap-8 font-display text-sm font-bold uppercase tracking-wide ${fg}`}
           >
             {item}
-            <ReelIcon className={`h-4 w-4 shrink-0 ${accent}`} />
+            <TicketIcon className={`h-4 w-4 shrink-0 ${accent}`} />
           </span>
         ))}
       </div>

@@ -14,7 +14,7 @@ const accents = ["bg-cat-blue", "bg-cat-red", "bg-cat-purple", "bg-cat-orange", 
 export default function Promotion() {
   return (
     <section id="promotion" className="relative overflow-hidden bg-sky py-16 sm:py-24">
-      <div className="dots pointer-events-none absolute inset-0 text-navy/[0.08]" aria-hidden />
+      <div className="grain-texture pointer-events-none absolute inset-0" aria-hidden />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <p className="inline-block -rotate-1 rounded-full border-2 border-navy bg-yellow px-3 py-1 font-display text-xs font-extrabold uppercase tracking-[0.15em] text-navy">

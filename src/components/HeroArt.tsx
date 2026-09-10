@@ -1,15 +1,9 @@
 import Image from "next/image";
-import { ReelIcon } from "./icons";
+import { TicketIcon } from "./icons";
 
 export default function HeroArt() {
   return (
     <div className="relative px-3 pb-14 pt-4 sm:px-6">
-      {/* halftone dot cluster behind */}
-      <div
-        aria-hidden
-        className="dots pointer-events-none absolute -right-4 -top-6 h-40 w-40 text-orange/70 sm:h-52 sm:w-52"
-      />
-
       {/* rotated hard-shadow sticker frame */}
       <div className="relative -rotate-2 rounded-[1.75rem] border-4 border-navy bg-white p-2 shadow-hard sm:p-3">
         <div className="relative aspect-[5/3] overflow-hidden rounded-[1.25rem] bg-navy">
@@ -40,9 +34,9 @@ export default function HeroArt() {
         </div>
       </div>
 
-      {/* film reel sticker */}
+      {/* ticket sticker */}
       <span className="absolute -left-3 top-6 flex h-14 w-14 rotate-[-8deg] items-center justify-center rounded-full border-2 border-navy bg-yellow shadow-hard-sm sm:-left-6">
-        <ReelIcon className="h-7 w-7 text-navy" />
+        <TicketIcon className="h-7 w-7 text-navy" />
       </span>
 
       {/* clapperboard doodle */}
