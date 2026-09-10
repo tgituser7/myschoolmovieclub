@@ -33,6 +33,25 @@ export const genres = [
   },
 ] as const;
 
+export const movieTypes = [
+  {
+    title: "Full Length Movies",
+    desc: "Feature-length films for a complete screening session, from assembly halls to a classroom double period.",
+  },
+  {
+    title: "Short Films (Inspirational & Motivational)",
+    desc: "Quick, powerful stories that spark motivation and inspiration — easy to fit into a single class period.",
+  },
+  {
+    title: "Educational Stories",
+    desc: "Curriculum-linked storytelling that turns a screening into a genuine lesson.",
+  },
+  {
+    title: "Tutorial Films",
+    desc: "Hands-on how-to content — how to make films, photography workshops, and how to make a documentary.",
+  },
+] as const;
+
 export const howItWorks = [
   {
     kicker: "Service 01",
@@ -48,6 +67,11 @@ export const howItWorks = [
     kicker: "Service 03",
     title: "Theatre Tours",
     desc: "Take the class out for the real thing — a partner cinema outing on the big screen, popcorn included, with a guided discussion afterwards.",
+  },
+  {
+    kicker: "Service 04",
+    title: "Village and Agriculture Tours",
+    desc: "Hands-on field trips to partner villages and farms — students see crop cycles, traditional farming methods and rural life firsthand.",
   },
 ] as const;
 

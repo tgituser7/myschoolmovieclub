@@ -14,7 +14,6 @@ export default function CTABanner({
 }) {
   return (
     <section className="relative overflow-hidden bg-orange px-6 py-16 sm:py-24 lg:px-10">
-      <div className="grain-texture pointer-events-none absolute inset-0" aria-hidden />
       <div className="relative mx-auto max-w-3xl text-center">
         <h2 className="text-balance font-display text-3xl font-extrabold text-navy sm:text-4xl">
           {title}

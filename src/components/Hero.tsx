@@ -20,9 +20,10 @@ export default function Hero() {
       >
         <BlobField
           blobs={[
-            { top: "-8%", left: "-6%", size: 460, color: "var(--color-primary-container)", opacity: 0.9 },
-            { top: "12%", right: "-10%", size: 380, color: "var(--color-secondary-container)", variant: "b", opacity: 0.85 },
-            { bottom: "-14%", left: "22%", size: 320, color: "var(--color-tertiary-container)", opacity: 0.8 },
+            { top: "-8%", left: "-6%", size: 460, color: "#a9c4fa", opacity: 0.9 },
+            { top: "12%", right: "-10%", size: 380, color: "#ffb587", variant: "b", opacity: 0.88 },
+            { bottom: "-14%", left: "22%", size: 320, color: "#ffd35c", opacity: 0.85 },
+            { bottom: "-10%", right: "10%", size: 260, color: "#7fdcc4", variant: "b", opacity: 0.85 },
           ]}
         />
 

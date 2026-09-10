@@ -12,7 +12,6 @@ export default function PageBanner({
   return (
     <>
       <section className="relative overflow-hidden bg-cream px-6 py-16 sm:py-24 lg:px-10">
-        <div className="grain-texture pointer-events-none absolute inset-0" aria-hidden />
         <div className="relative mx-auto max-w-4xl text-center">
           <p className="inline-block -rotate-1 rounded-full border-2 border-navy bg-yellow px-4 py-1.5 font-display text-xs font-extrabold uppercase tracking-[0.15em] text-navy shadow-hard-sm">
             {kicker}

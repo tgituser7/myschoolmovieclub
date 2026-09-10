@@ -1,8 +1,8 @@
 import { howItWorks } from "@/lib/content";
-import { FilmFrameIcon, GraduationCapIcon, TicketIcon } from "./icons";
+import { FilmFrameIcon, GraduationCapIcon, LeafIcon, TicketIcon } from "./icons";
 
-const accents = ["bg-cat-blue", "bg-cat-purple", "bg-cat-orange"];
-const icons = [GraduationCapIcon, FilmFrameIcon, TicketIcon];
+const accents = ["bg-cat-blue", "bg-cat-purple", "bg-cat-orange", "bg-cat-green"];
+const icons = [GraduationCapIcon, FilmFrameIcon, TicketIcon, LeafIcon];
 
 export default function HowItWorks() {
   return (
@@ -13,7 +13,7 @@ export default function HowItWorks() {
             How It Works
           </p>
           <h2 className="mt-4 text-balance font-display text-3xl font-extrabold text-white sm:text-4xl">
-            Three ways to bring the club to your school
+            Four ways to bring the club to your school
           </h2>
           <p className="mt-4 text-balance leading-relaxed text-white/70">
             Whatever a school already has in place — or doesn&apos;t —
@@ -21,7 +21,7 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-3">
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {howItWorks.map((h, i) => {
             const Icon = icons[i % icons.length];
             return (

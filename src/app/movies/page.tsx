@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageBanner from "@/components/PageBanner";
 import CategoryPills from "@/components/CategoryPills";
+import MovieTypes from "@/components/MovieTypes";
 import FeaturedMovies from "@/components/FeaturedMovies";
 import CTABanner from "@/components/CTABanner";
 
@@ -19,6 +20,7 @@ export default function MoviesPage() {
         subtitle="Every title in the collection is picked for a reason — something for every age, mood and subject."
       />
       <CategoryPills />
+      <MovieTypes />
       <FeaturedMovies />
       <CTABanner
         title="Want this catalogue playing at your school?"
