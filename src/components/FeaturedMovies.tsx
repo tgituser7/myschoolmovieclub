@@ -22,7 +22,7 @@ const movies: Movie[] = [
     image: "/movies/2littleindians.jpeg",
   },
   {
-    title: "Go Mata: Our Pride, Our Responsibility",
+    title: "Go Mata: Devption & Responsibility",
     duration: "12:45",
     Art: GoMataArt,
   },
