@@ -2,11 +2,14 @@ import {
   AtomIcon,
   BankIcon,
   BoltIcon,
+  BookIcon,
   ChevronRightIcon,
   HeartIcon,
   HeartPulseIcon,
   LeafIcon,
   PersonIcon,
+  SparkleIcon,
+  TrophyIcon,
 } from "./icons";
 
 const categories = [
@@ -17,6 +20,9 @@ const categories = [
   { label: "Life Skills", icon: PersonIcon, bg: "bg-cat-orange" },
   { label: "Health & Wellness", icon: HeartPulseIcon, bg: "bg-cat-teal" },
   { label: "Motivation", icon: BoltIcon, bg: "bg-cat-gold" },
+  { label: "Sports", icon: TrophyIcon, bg: "bg-cat-pink" },
+  { label: "Educational", icon: BookIcon, bg: "bg-cat-indigo" },
+  { label: "Animated", icon: SparkleIcon, bg: "bg-cat-cyan" },
 ];
 
 export default function CategoryPills() {
@@ -29,7 +35,7 @@ export default function CategoryPills() {
               Browse by Category
             </p>
             <h2 className="mt-4 font-display text-3xl font-extrabold text-navy sm:text-[2.4rem]">
-              Explore Our Movie Collection
+              Movies for a Brighter Tomorrow
             </h2>
           </div>
           <a

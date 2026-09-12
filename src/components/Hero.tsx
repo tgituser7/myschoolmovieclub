@@ -8,7 +8,6 @@ const tickerItems = [
   "Classroom Movies",
   "Theatre Tours",
   "Village and Agriculture Tours",
-  "Where Movies Meet Education",
 ];
 
 export default function Hero() {
@@ -33,15 +32,12 @@ export default function Hero() {
               Learn &bull; Enjoy &bull; Grow
             </p>
             <h1 className="mt-6 text-balance font-display text-5xl font-extrabold leading-[1.05] text-navy sm:text-6xl lg:text-[4rem]">
-              Movies for a
+              Where <span className="scribble-underline text-blue">Movies</span>
               <br />
-              <span className="scribble-underline text-blue">Brighter</span>{" "}
-              <span className="text-orange">Tomorrow</span>
+              Meet <span className="text-orange">Education</span>
             </h1>
             <p className="mt-6 max-w-md text-balance text-lg leading-relaxed text-slate-dark">
-              My School Movie Club is a membership club where students can
-              watch screening of movies in their school which basically have
-              an educational aim.
+              My School Movie Club is an open membership club where students can watch movie in school and theater
             </p>
             <a
               href="#movies"
