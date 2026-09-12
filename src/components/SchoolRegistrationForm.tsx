@@ -4,6 +4,45 @@ import { FormEvent, useState } from "react";
 import { ChevronRightIcon, GraduationCapIcon } from "./icons";
 import { Field, SelectField, TextAreaField } from "./FormField";
 
+const indianStates = [
+  "Andhra Pradesh",
+  "Arunachal Pradesh",
+  "Assam",
+  "Bihar",
+  "Chhattisgarh",
+  "Goa",
+  "Gujarat",
+  "Haryana",
+  "Himachal Pradesh",
+  "Jharkhand",
+  "Karnataka",
+  "Kerala",
+  "Madhya Pradesh",
+  "Maharashtra",
+  "Manipur",
+  "Meghalaya",
+  "Mizoram",
+  "Nagaland",
+  "Odisha",
+  "Punjab",
+  "Rajasthan",
+  "Sikkim",
+  "Tamil Nadu",
+  "Telangana",
+  "Tripura",
+  "Uttar Pradesh",
+  "Uttarakhand",
+  "West Bengal",
+  "Andaman and Nicobar Islands",
+  "Chandigarh",
+  "Dadra and Nagar Haveli and Daman and Diu",
+  "Delhi (NCT)",
+  "Jammu and Kashmir",
+  "Ladakh",
+  "Lakshadweep",
+  "Puducherry",
+];
+
 export default function SchoolRegistrationForm() {
   const [sent, setSent] = useState(false);
 
@@ -41,12 +80,41 @@ export default function SchoolRegistrationForm() {
                   required
                 />
               </div>
+              <Field label="Address" name="address" required />
               <div className="grid gap-5 sm:grid-cols-2">
+                <SelectField
+                  label="State"
+                  name="state"
+                  options={[...indianStates]}
+                  required
+                />
                 <Field label="City" name="city" required />
+              </div>
+              <div className="grid gap-5 sm:grid-cols-2">
+                <Field
+                  label="School Email"
+                  name="schoolEmail"
+                  type="email"
+                  required
+                />
+                <Field
+                  label="School Website"
+                  name="schoolWebsite"
+                  type="url"
+                  placeholder="https://"
+                />
+              </div>
+              <div className="grid gap-5 sm:grid-cols-2">
                 <SelectField
                   label="Approximate Student Strength"
                   name="strength"
                   options={["Under 200", "200–500", "500–1000", "1000+"]}
+                />
+                <Field
+                  label="Expected Students Joining the Club"
+                  name="expectedStudents"
+                  type="number"
+                  placeholder="e.g. 40"
                 />
               </div>
               <div className="grid gap-5 sm:grid-cols-2">
@@ -54,25 +122,16 @@ export default function SchoolRegistrationForm() {
                 <Field label="Designation" name="designation" />
               </div>
               <div className="grid gap-5 sm:grid-cols-2">
-                <Field label="Email" name="email" type="email" required />
+                <Field
+                  label="Contact Email"
+                  name="email"
+                  type="email"
+                  required
+                />
                 <Field label="Phone" name="phone" type="tel" required />
               </div>
-              <SelectField
-                label="Preferred Plan"
-                name="plan"
-                options={[
-                  "In School Movie",
-                  "Classroom Movies",
-                  "Theatre Tours",
-                  "Village and Agriculture Tours",
-                  "Skill Development Workshops",
-                  "Celebrity Management",
-                  "Backstage Technical Support",
-                  "Not sure yet",
-                ]}
-              />
               <TextAreaField
-                label="Anything else we should know? (optional)"
+                label="Anything else we should know?"
                 name="message"
                 placeholder="Existing projection equipment, preferred term to start, class sizes..."
               />

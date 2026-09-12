@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
 import PageBanner from "@/components/PageBanner";
 import CTABanner from "@/components/CTABanner";
-import {
-  BankIcon,
-  BookIcon,
-  HandsIcon,
-  ShieldIcon,
-  UsersIcon,
-} from "@/components/icons";
+import { BankIcon, BookIcon, ShieldIcon, UsersIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Associations — My School Movie Club",
@@ -20,27 +14,6 @@ const curricula = [
   { label: "ICSE", icon: BankIcon, bg: "bg-cat-purple" },
   { label: "State Boards", icon: UsersIcon, bg: "bg-cat-teal" },
   { label: "IB & International", icon: ShieldIcon, bg: "bg-cat-orange" },
-];
-
-const network = [
-  {
-    title: "Partner Schools",
-    desc: "A growing network of schools across regions and boards, sharing feedback that shapes each term's catalogue.",
-    icon: UsersIcon,
-    bg: "bg-cat-blue",
-  },
-  {
-    title: "Content Advisory Panel",
-    desc: "Educators and child-development consultants review every title before it enters the catalogue.",
-    icon: ShieldIcon,
-    bg: "bg-cat-teal",
-  },
-  {
-    title: "Social-Cause Partners",
-    desc: "We work alongside education-focused NGOs to source and co-create films on social causes.",
-    icon: HandsIcon,
-    bg: "bg-cat-red",
-  },
 ];
 
 export default function AssociationsPage() {
@@ -74,34 +47,6 @@ export default function AssociationsPage() {
                 </span>
                 <p className="font-display text-sm font-extrabold text-navy">
                   {c.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden bg-sky py-16 sm:py-24">
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-          <h2 className="text-center font-display text-2xl font-extrabold text-navy sm:text-3xl">
-            Who we work with
-          </h2>
-          <div className="mt-10 grid gap-8 lg:grid-cols-3">
-            {network.map((n, i) => (
-              <div
-                key={n.title}
-                className={`rounded-2xl border-2 border-navy bg-white p-8 shadow-hard transition-transform hover:-translate-y-1 ${
-                  i % 2 === 0 ? "lg:-rotate-1" : "lg:rotate-1"
-                }`}
-              >
-                <span className={`flex h-12 w-12 items-center justify-center rounded-full border-2 border-navy text-white ${n.bg}`}>
-                  <n.icon className="h-5 w-5" />
-                </span>
-                <h3 className="mt-6 font-display text-lg font-extrabold text-navy">
-                  {n.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-dark">
-                  {n.desc}
                 </p>
               </div>
             ))}
