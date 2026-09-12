@@ -51,8 +51,7 @@ export default function Footer() {
         </div>
 
         <p className="mt-6 text-center font-sans text-xs text-white/40">
-          © {new Date().getFullYear()} My School Movie Club. A membership
-          programme bringing curated cinema into school life.
+          © {new Date().getFullYear()} My School Movie Club
         </p>
       </div>
     </footer>

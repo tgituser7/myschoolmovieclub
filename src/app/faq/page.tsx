@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "What is My School Movie Club?",
-    a: "A membership programme that brings curated, educational film screenings, tours and workshops into school life — turning screen time into curriculum, discussion and discovery.",
+    a: "A membership club that brings curated, educational film screenings, tours and workshops into school life — turning screen time into curriculum, discussion and discovery.",
   },
   {
     q: "How do we get our school started?",

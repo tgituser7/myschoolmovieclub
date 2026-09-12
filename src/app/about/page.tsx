@@ -16,7 +16,7 @@ export default function AboutPage() {
       <PageBanner
         kicker="About Us"
         title="Educate. Inspire. Empower."
-        subtitle="A membership programme built on one idea: the same story that entertains a child can also teach them something that lasts."
+        subtitle="A membership club built on one idea: the same story that entertains a child can also teach them something that lasts."
       />
       <Mission />
       <Advantages />
