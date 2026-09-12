@@ -18,6 +18,7 @@ export default function MoviesPage() {
         kicker="The Catalogue"
         title="A movie for every lesson"
         subtitle="Every title in the collection is picked for a reason — something for every age, mood and subject."
+        bgImage="/designimage2.jpeg"
       />
       <CategoryPills />
       <MovieTypes />

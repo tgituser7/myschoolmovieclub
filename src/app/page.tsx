@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Hero />
       <CategoryPills />
-      <FeaturedMovies />
+      <FeaturedMovies photoBackground />
       <CTABanner
         title="Ready to bring meaningful movies to your school?"
         subtitle="From a single screening to a full-term subscription, we'll help you find the right fit — see how the club works, or register your school today."

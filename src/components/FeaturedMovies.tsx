@@ -48,21 +48,51 @@ const movies: Movie[] = [
   },
 ];
 
-export default function FeaturedMovies() {
+export default function FeaturedMovies({
+  photoBackground = false,
+}: {
+  photoBackground?: boolean;
+}) {
   return (
-    <section id="movies" className="scroll-mt-20 bg-cream py-16 sm:py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+    <section
+      id="movies"
+      className={`scroll-mt-20 relative overflow-hidden py-16 sm:py-24 ${
+        photoBackground ? "" : "bg-cream"
+      }`}
+    >
+      {photoBackground ? (
+        <>
+          <Image
+            src="/designimage1.jpeg"
+            alt=""
+            aria-hidden
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-navy/75" />
+        </>
+      ) : null}
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <div className="flex items-center gap-2.5">
               <span className="flex h-10 w-10 items-center justify-center rounded-lg border-2 border-navy bg-blue text-white shadow-hard-sm">
                 <ReelIcon className="h-5 w-5" />
               </span>
-              <h2 className="font-display text-3xl font-extrabold text-navy sm:text-[2.4rem]">
+              <h2
+                className={`font-display text-3xl font-extrabold sm:text-[2.4rem] ${
+                  photoBackground ? "text-white" : "text-navy"
+                }`}
+              >
                 Featured Movies
               </h2>
             </div>
-            <p className="mt-2 text-balance text-sm text-slate-dark">
+            <p
+              className={`mt-2 text-balance text-sm ${
+                photoBackground ? "text-white/75" : "text-slate-dark"
+              }`}
+            >
               Handpicked movies that inspire, educate and make a difference.
             </p>
           </div>
