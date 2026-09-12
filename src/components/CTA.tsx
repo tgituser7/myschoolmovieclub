@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { ChevronRightIcon, PlayFilledIcon, TicketIcon } from "./icons";
-import { Field, SelectField, TextAreaField } from "./FormField";
+import { Field, SelectField, TermsCheckbox, TextAreaField } from "./FormField";
 
 const joinOptions = [
   "Become a Member",
@@ -94,6 +94,7 @@ export default function CTA() {
                 name="message"
                 placeholder="Class sizes, preferred timing, existing equipment..."
               />
+              <TermsCheckbox />
               <button
                 type="submit"
                 className="group mt-2 inline-flex items-center justify-center gap-2.5 rounded-full border-2 border-navy bg-orange py-3 pl-3 pr-6 font-display text-sm font-extrabold text-navy shadow-hard-sm transition-transform hover:-translate-y-1 hover:shadow-hard"

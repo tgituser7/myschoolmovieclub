@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { ChevronRightIcon, TicketIcon } from "./icons";
-import { Field, TextAreaField } from "./FormField";
+import { Field, TermsCheckbox, TextAreaField } from "./FormField";
 
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
@@ -43,6 +43,7 @@ export default function ContactForm() {
         required
         placeholder="How can we help?"
       />
+      <TermsCheckbox />
       <button
         type="submit"
         className="mt-2 inline-flex items-center justify-center gap-2 rounded-full border-2 border-navy bg-orange px-6 py-3.5 font-display text-sm font-extrabold text-navy shadow-hard-sm transition-transform hover:-translate-y-1 hover:shadow-hard"

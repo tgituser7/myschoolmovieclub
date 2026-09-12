@@ -88,6 +88,21 @@ export const howItWorks = [
     title: "Backstage Technical Support",
     desc: "Sound, lighting and projection handled by our crew, so your event runs smoothly from setup to curtain call.",
   },
+  {
+    kicker: "Service 08",
+    title: "Art Competitions",
+    desc: "School-wide art competitions that give students a creative outlet and a chance to showcase their work.",
+  },
+  {
+    kicker: "Service 09",
+    title: "Movie Making Competitions",
+    desc: "Student teams write, shoot and edit their own short films, competing for recognition and prizes.",
+  },
+  {
+    kicker: "Service 10",
+    title: "Debate Competitions",
+    desc: "Structured debates that build public speaking, critical thinking and confidence in front of an audience.",
+  },
 ] as const;
 
 export const schedule = [

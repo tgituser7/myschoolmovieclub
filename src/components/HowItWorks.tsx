@@ -1,10 +1,13 @@
 import { howItWorks } from "@/lib/content";
 import {
+  CameraIcon,
+  ChatIcon,
   ClapperIcon,
   FilmFrameIcon,
   GraduationCapIcon,
   LeafIcon,
   PersonIcon,
+  QuillIcon,
   ShieldIcon,
   TicketIcon,
 } from "./icons";
@@ -17,6 +20,9 @@ const accents = [
   "bg-cat-red",
   "bg-cat-gold",
   "bg-cat-teal",
+  "bg-cat-pink",
+  "bg-cat-indigo",
+  "bg-cat-cyan",
 ];
 const icons = [
   GraduationCapIcon,
@@ -26,6 +32,9 @@ const icons = [
   ClapperIcon,
   PersonIcon,
   ShieldIcon,
+  QuillIcon,
+  CameraIcon,
+  ChatIcon,
 ];
 
 export default function HowItWorks() {
@@ -37,7 +46,7 @@ export default function HowItWorks() {
             How It Works
           </p>
           <h2 className="mt-4 text-balance font-display text-3xl font-extrabold text-white sm:text-4xl">
-            Seven ways to bring the club to your school
+            Ten ways to bring the club to your school
           </h2>
           <p className="mt-4 text-balance leading-relaxed text-white/70">
             Whatever a school already has in place — or doesn&apos;t —
@@ -45,7 +54,7 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
           {howItWorks.map((h, i) => {
             const Icon = icons[i % icons.length];
             return (

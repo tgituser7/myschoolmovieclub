@@ -6,7 +6,7 @@ import CTABanner from "@/components/CTABanner";
 export const metadata: Metadata = {
   title: "Services — My School Movie Club",
   description:
-    "Seven ways to bring My School Movie Club to your campus — screenings, tours, skill development workshops, celebrity management and backstage technical support.",
+    "Ten ways to bring My School Movie Club to your campus — screenings, tours, skill development workshops, art, movie making and debate competitions, celebrity management and backstage technical support.",
 };
 
 export default function ServicesPage() {
@@ -14,8 +14,8 @@ export default function ServicesPage() {
     <>
       <PageBanner
         kicker="Our Services"
-        title="Seven ways to bring movies into school life"
-        subtitle="From screenings and field trips to hands-on workshops and full event support — pick the format that suits the occasion."
+        title="Ten ways to bring movies into school life"
+        subtitle="From screenings and field trips to hands-on workshops, competitions and full event support — pick the format that suits the occasion."
       />
       <HowItWorks />
       <CTABanner

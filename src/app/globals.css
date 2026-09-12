@@ -21,6 +21,9 @@
   --color-cat-orange: #f5920b;
   --color-cat-teal: #14b8a6;
   --color-cat-gold: #eab308;
+  --color-cat-pink: #ec4899;
+  --color-cat-indigo: #6366f1;
+  --color-cat-cyan: #06b6d4;
 
   --font-display: "var(--font-display-src)", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "var(--font-sans-src)", ui-sans-serif, system-ui, sans-serif;

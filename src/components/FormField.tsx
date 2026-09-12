@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ChevronRightIcon } from "./icons";
 
 const baseClasses =
@@ -98,6 +99,29 @@ export function SelectField({
         </select>
         <ChevronRightIcon className="pointer-events-none absolute right-3.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 rotate-90 text-slate" />
       </div>
+    </label>
+  );
+}
+
+export function TermsCheckbox({ name = "acceptTerms" }: { name?: string }) {
+  return (
+    <label className="flex items-start gap-2.5">
+      <input
+        type="checkbox"
+        name={name}
+        required
+        className="mt-0.5 h-4 w-4 shrink-0 rounded border-2 border-navy/40 text-blue focus:ring-2 focus:ring-blue"
+      />
+      <span className="text-sm text-slate-dark">
+        I agree to the{" "}
+        <Link
+          href="/terms-of-use"
+          target="_blank"
+          className="font-semibold text-blue underline hover:text-blue-dark"
+        >
+          Terms of Use
+        </Link>
+      </span>
     </label>
   );
 }

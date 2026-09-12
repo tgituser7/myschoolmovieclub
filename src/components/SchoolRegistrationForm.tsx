@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { ChevronRightIcon, GraduationCapIcon } from "./icons";
-import { Field, SelectField, TextAreaField } from "./FormField";
+import { Field, SelectField, TermsCheckbox, TextAreaField } from "./FormField";
 
 const indianStates = [
   "Andhra Pradesh",
@@ -135,6 +135,7 @@ export default function SchoolRegistrationForm() {
                 name="message"
                 placeholder="Existing projection equipment, preferred term to start, class sizes..."
               />
+              <TermsCheckbox />
               <button
                 type="submit"
                 className="mt-2 inline-flex items-center justify-center gap-2 rounded-full border-2 border-navy bg-orange px-6 py-3.5 font-display text-sm font-extrabold text-navy shadow-hard-sm transition-transform hover:-translate-y-1 hover:shadow-hard"

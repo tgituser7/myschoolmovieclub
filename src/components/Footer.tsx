@@ -35,7 +35,22 @@ export default function Footer() {
           </nav>
         </div>
 
-        <p className="mt-10 text-center font-sans text-xs text-white/40">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 border-t border-white/10 pt-6">
+          <Link
+            href="/faq"
+            className="font-sans text-xs font-semibold text-white/60 transition-colors hover:text-orange"
+          >
+            FAQ
+          </Link>
+          <Link
+            href="/terms-of-use"
+            className="font-sans text-xs font-semibold text-white/60 transition-colors hover:text-orange"
+          >
+            Terms of Use
+          </Link>
+        </div>
+
+        <p className="mt-6 text-center font-sans text-xs text-white/40">
           © {new Date().getFullYear()} My School Movie Club. A membership
           programme bringing curated cinema into school life.
         </p>
