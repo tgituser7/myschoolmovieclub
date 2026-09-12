@@ -1,32 +1,24 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { howItWorks, indianStates } from "@/lib/content";
+import { indianStates } from "@/lib/content";
 import { ChevronRightIcon, TicketIcon } from "./icons";
 import {
-  CheckboxGroupField,
   Field,
+  RadioGroupField,
   SelectField,
   TermsCheckbox,
   TextAreaField,
 } from "./FormField";
 
-const serviceOptions = howItWorks
-  .map((h) => h.title)
-  .filter((title) => title !== "Classroom Movies");
+const serviceOptions = ["In School Movie", "Theatre Tours"];
 
 export default function BookServiceForm() {
   const [sent, setSent] = useState(false);
-  const [services, setServices] = useState<string[]>([]);
-  const [showServicesError, setShowServicesError] = useState(false);
+  const [service, setService] = useState("");
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (services.length === 0) {
-      setShowServicesError(true);
-      return;
-    }
-    setShowServicesError(false);
     setSent(true);
   }
 
@@ -59,6 +51,7 @@ export default function BookServiceForm() {
           label="State"
           name="state"
           options={[...indianStates]}
+          placeholder="Select a state"
           required
         />
         <Field label="City" name="city" required />
@@ -76,21 +69,14 @@ export default function BookServiceForm() {
           placeholder="e.g. 40"
         />
       </div>
-      <CheckboxGroupField
-        label="Which services would you like to book? (select all that apply)"
-        name="services"
+      <RadioGroupField
+        label="Which service would you like to book?"
+        name="service"
         options={serviceOptions}
-        values={services}
-        onChange={(v) => {
-          setServices(v);
-          if (v.length > 0) setShowServicesError(false);
-        }}
+        value={service}
+        onChange={setService}
+        required
       />
-      {showServicesError ? (
-        <p className="-mt-3 text-sm font-semibold text-cat-red">
-          Please select at least one service.
-        </p>
-      ) : null}
       <TextAreaField
         label="Additional Details"
         name="message"

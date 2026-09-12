@@ -69,6 +69,7 @@ export function SelectField({
   required = false,
   value,
   onChange,
+  placeholder = "Select an option",
 }: {
   label: string;
   name: string;
@@ -76,6 +77,7 @@ export function SelectField({
   required?: boolean;
   value?: string;
   onChange?: (value: string) => void;
+  placeholder?: string;
 }) {
   return (
     <label className="grid gap-1.5">
@@ -90,7 +92,7 @@ export function SelectField({
           onChange={onChange ? (e) => onChange(e.target.value) : undefined}
           className={`w-full appearance-none pr-9 ${baseClasses}`}
         >
-          <option value="">Select an option</option>
+          <option value="">{placeholder}</option>
           {options.map((o) => (
             <option key={o} value={o}>
               {o}
@@ -157,6 +159,56 @@ export function CheckboxGroupField({
       {values.map((v) => (
         <input key={v} type="hidden" name={name} value={v} />
       ))}
+    </div>
+  );
+}
+
+export function RadioGroupField({
+  label,
+  name,
+  options,
+  value,
+  onChange,
+  required = false,
+}: {
+  label: string;
+  name: string;
+  options: string[];
+  value: string;
+  onChange: (value: string) => void;
+  required?: boolean;
+}) {
+  return (
+    <div className="grid gap-2">
+      <span className="font-sans text-xs font-bold uppercase tracking-wide text-navy/70">
+        {label}
+      </span>
+      <div className="grid gap-2 sm:grid-cols-2">
+        {options.map((o) => {
+          const checked = value === o;
+          return (
+            <label
+              key={o}
+              className={`flex cursor-pointer items-center gap-2.5 rounded-xl border-2 px-3.5 py-2.5 text-sm transition-colors ${
+                checked
+                  ? "border-navy bg-blue/10 text-navy"
+                  : "border-navy/20 bg-white text-navy hover:border-navy/40"
+              }`}
+            >
+              <input
+                type="radio"
+                name={name}
+                value={o}
+                checked={checked}
+                required={required}
+                onChange={() => onChange(o)}
+                className="h-4 w-4 shrink-0 border-2 border-navy/40 text-blue focus:ring-2 focus:ring-blue"
+              />
+              {o}
+            </label>
+          );
+        })}
+      </div>
     </div>
   );
 }

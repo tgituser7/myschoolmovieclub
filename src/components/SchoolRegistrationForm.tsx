@@ -48,6 +48,7 @@ export default function SchoolRegistrationForm() {
                   label="State"
                   name="state"
                   options={[...indianStates]}
+                  placeholder="Select a state"
                   required
                 />
                 <Field label="City" name="city" required />

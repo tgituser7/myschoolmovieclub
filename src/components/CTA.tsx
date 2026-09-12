@@ -75,7 +75,7 @@ export default function CTA() {
               />
               {joinAs === "Other" ? (
                 <Field
-                  label="Please specify"
+                  label="Kindly Specify"
                   name="joinAsOther"
                   placeholder="Tell us how you'd like to join"
                   required
