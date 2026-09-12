@@ -3,45 +3,7 @@
 import { FormEvent, useState } from "react";
 import { ChevronRightIcon, GraduationCapIcon } from "./icons";
 import { Field, SelectField, TermsCheckbox, TextAreaField } from "./FormField";
-
-const indianStates = [
-  "Andhra Pradesh",
-  "Arunachal Pradesh",
-  "Assam",
-  "Bihar",
-  "Chhattisgarh",
-  "Goa",
-  "Gujarat",
-  "Haryana",
-  "Himachal Pradesh",
-  "Jharkhand",
-  "Karnataka",
-  "Kerala",
-  "Madhya Pradesh",
-  "Maharashtra",
-  "Manipur",
-  "Meghalaya",
-  "Mizoram",
-  "Nagaland",
-  "Odisha",
-  "Punjab",
-  "Rajasthan",
-  "Sikkim",
-  "Tamil Nadu",
-  "Telangana",
-  "Tripura",
-  "Uttar Pradesh",
-  "Uttarakhand",
-  "West Bengal",
-  "Andaman and Nicobar Islands",
-  "Chandigarh",
-  "Dadra and Nagar Haveli and Daman and Diu",
-  "Delhi (NCT)",
-  "Jammu and Kashmir",
-  "Ladakh",
-  "Lakshadweep",
-  "Puducherry",
-];
+import { indianStates } from "@/lib/content";
 
 export default function SchoolRegistrationForm() {
   const [sent, setSent] = useState(false);
@@ -118,7 +80,7 @@ export default function SchoolRegistrationForm() {
                 />
               </div>
               <div className="grid gap-5 sm:grid-cols-2">
-                <Field label="Contact Person" name="contactName" required />
+                <Field label="Representative Name" name="representativeName" required />
                 <Field label="Designation" name="designation" />
               </div>
               <div className="grid gap-5 sm:grid-cols-2">

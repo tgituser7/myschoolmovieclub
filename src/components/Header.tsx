@@ -62,6 +62,13 @@ export default function Header() {
           Join Us
         </Link>
 
+        <Link
+          href="/book-service"
+          className="hidden shrink-0 items-center gap-1.5 rounded-full border-2 border-navy bg-blue px-4 py-2 font-display text-[13.5px] font-extrabold uppercase tracking-wide text-white shadow-hard-sm transition-transform hover:-translate-y-0.5 hover:shadow-hard xl:ml-2 xl:flex"
+        >
+          Book Service/Event
+        </Link>
+
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
@@ -90,12 +97,20 @@ export default function Header() {
               {l.label}
             </Link>
           ))}
-          <Link
-            href="/join-us"
-            className="my-4 flex items-center justify-center rounded-full border-2 border-navy bg-orange py-3 font-display text-sm font-extrabold uppercase tracking-wide text-navy shadow-hard-sm"
-          >
-            Join Us
-          </Link>
+          <div className="my-4 flex flex-col gap-3">
+            <Link
+              href="/join-us"
+              className="flex items-center justify-center rounded-full border-2 border-navy bg-orange py-3 font-display text-sm font-extrabold uppercase tracking-wide text-navy shadow-hard-sm"
+            >
+              Join Us
+            </Link>
+            <Link
+              href="/book-service"
+              className="flex items-center justify-center rounded-full border-2 border-navy bg-blue py-3 font-display text-sm font-extrabold uppercase tracking-wide text-white shadow-hard-sm"
+            >
+              Book Service/Event
+            </Link>
+          </div>
         </nav>
       </div>
     </header>

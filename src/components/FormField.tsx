@@ -103,6 +103,64 @@ export function SelectField({
   );
 }
 
+export function CheckboxGroupField({
+  label,
+  name,
+  options,
+  values,
+  onChange,
+}: {
+  label: string;
+  name: string;
+  options: string[];
+  values: string[];
+  onChange: (values: string[]) => void;
+}) {
+  function toggle(option: string) {
+    onChange(
+      values.includes(option)
+        ? values.filter((v) => v !== option)
+        : [...values, option]
+    );
+  }
+
+  return (
+    <div className="grid gap-2">
+      <span className="font-sans text-xs font-bold uppercase tracking-wide text-navy/70">
+        {label}
+      </span>
+      <div className="grid gap-2 sm:grid-cols-2">
+        {options.map((o) => {
+          const checked = values.includes(o);
+          return (
+            <label
+              key={o}
+              className={`flex cursor-pointer items-center gap-2.5 rounded-xl border-2 px-3.5 py-2.5 text-sm transition-colors ${
+                checked
+                  ? "border-navy bg-blue/10 text-navy"
+                  : "border-navy/20 bg-white text-navy hover:border-navy/40"
+              }`}
+            >
+              <input
+                type="checkbox"
+                value={o}
+                checked={checked}
+                onChange={() => toggle(o)}
+                className="h-4 w-4 shrink-0 rounded border-2 border-navy/40 text-blue focus:ring-2 focus:ring-blue"
+              />
+              {o}
+            </label>
+          );
+        })}
+      </div>
+      {/* hidden inputs so the selection is included on a native form submit */}
+      {values.map((v) => (
+        <input key={v} type="hidden" name={name} value={v} />
+      ))}
+    </div>
+  );
+}
+
 export function TermsCheckbox({ name = "acceptTerms" }: { name?: string }) {
   return (
     <label className="flex items-start gap-2.5">
