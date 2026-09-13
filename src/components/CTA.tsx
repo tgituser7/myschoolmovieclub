@@ -1,8 +1,9 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { useState } from "react";
 import { ChevronRightIcon, PlayFilledIcon, TicketIcon } from "./icons";
 import { Field, SelectField, TermsCheckbox, TextAreaField } from "./FormField";
+import { useFormSubmit } from "@/lib/useFormSubmit";
 
 const joinOptions = [
   "Become a Member",
@@ -13,13 +14,8 @@ const joinOptions = [
 ];
 
 export default function CTA() {
-  const [sent, setSent] = useState(false);
+  const { status, submit } = useFormSubmit("/api/join-us");
   const [joinAs, setJoinAs] = useState("");
-
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setSent(true);
-  }
 
   return (
     <section
@@ -50,7 +46,7 @@ export default function CTA() {
         </div>
 
         <div className="rounded-2xl border-2 border-navy bg-white p-8 shadow-hard">
-          {sent ? (
+          {status === "success" ? (
             <div className="flex h-full flex-col items-center justify-center py-10 text-center">
               <span className="flex h-14 w-14 items-center justify-center rounded-full bg-blue/10 text-blue">
                 <TicketIcon className="h-6 w-6" />
@@ -64,7 +60,7 @@ export default function CTA() {
               </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="grid gap-4">
+            <form onSubmit={submit} className="grid gap-4">
               <SelectField
                 label="I'd like to join as"
                 name="joinAs"
@@ -87,7 +83,7 @@ export default function CTA() {
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <Field label="Email" name="email" type="email" required />
-                <Field label="Phone" name="phone" type="tel" />
+                <Field label="Mobile" name="mobile" type="tel" />
               </div>
               <TextAreaField
                 label="Message (optional)"
@@ -95,14 +91,21 @@ export default function CTA() {
                 placeholder="Class sizes, preferred timing, existing equipment..."
               />
               <TermsCheckbox />
+              {status === "error" ? (
+                <p className="text-sm font-semibold text-cat-red">
+                  Something went wrong sending your request. Please try
+                  again.
+                </p>
+              ) : null}
               <button
                 type="submit"
-                className="group mt-2 inline-flex items-center justify-center gap-2.5 rounded-full border-2 border-navy bg-orange py-3 pl-3 pr-6 font-display text-sm font-extrabold text-navy shadow-hard-sm transition-transform hover:-translate-y-1 hover:shadow-hard"
+                disabled={status === "submitting"}
+                className="group mt-2 inline-flex items-center justify-center gap-2.5 rounded-full border-2 border-navy bg-orange py-3 pl-3 pr-6 font-display text-sm font-extrabold text-navy shadow-hard-sm transition-transform hover:-translate-y-1 hover:shadow-hard disabled:opacity-60"
               >
                 <span className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-navy bg-white text-navy">
                   <PlayFilledIcon className="h-3 w-3 translate-x-[1px]" />
                 </span>
-                Request a Callback
+                {status === "submitting" ? "Sending..." : "Request a Callback"}
                 <ChevronRightIcon className="h-4 w-4" />
               </button>
             </form>

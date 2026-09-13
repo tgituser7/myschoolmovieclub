@@ -1,18 +1,13 @@
 "use client";
 
-import { FormEvent, useState } from "react";
 import { ChevronRightIcon, TicketIcon } from "./icons";
 import { Field, TermsCheckbox, TextAreaField } from "./FormField";
+import { useFormSubmit } from "@/lib/useFormSubmit";
 
 export default function ContactForm() {
-  const [sent, setSent] = useState(false);
+  const { status, submit } = useFormSubmit("/api/contact");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setSent(true);
-  }
-
-  if (sent) {
+  if (status === "success") {
     return (
       <div className="flex flex-col items-center py-10 text-center">
         <span className="flex h-14 w-14 items-center justify-center rounded-full bg-blue/10 text-blue">
@@ -30,7 +25,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="grid gap-4">
+    <form onSubmit={submit} className="grid gap-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <Field label="Your Name" name="name" required />
         <Field label="Email" name="email" type="email" required />
@@ -44,11 +39,17 @@ export default function ContactForm() {
         placeholder="How can we help?"
       />
       <TermsCheckbox />
+      {status === "error" ? (
+        <p className="text-sm font-semibold text-cat-red">
+          Something went wrong sending your message. Please try again.
+        </p>
+      ) : null}
       <button
         type="submit"
-        className="mt-2 inline-flex items-center justify-center gap-2 rounded-full border-2 border-navy bg-orange px-6 py-3.5 font-display text-sm font-extrabold text-navy shadow-hard-sm transition-transform hover:-translate-y-1 hover:shadow-hard"
+        disabled={status === "submitting"}
+        className="mt-2 inline-flex items-center justify-center gap-2 rounded-full border-2 border-navy bg-orange px-6 py-3.5 font-display text-sm font-extrabold text-navy shadow-hard-sm transition-transform hover:-translate-y-1 hover:shadow-hard disabled:opacity-60"
       >
-        Send Message
+        {status === "submitting" ? "Sending..." : "Send Message"}
         <ChevronRightIcon className="h-4 w-4" />
       </button>
     </form>
