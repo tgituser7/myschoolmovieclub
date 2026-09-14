@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageBanner from "@/components/PageBanner";
 import HowItWorks from "@/components/HowItWorks";
+import VlogsSection from "@/components/VlogsSection";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function ServicesPage() {
         subtitle="From screenings and field trips to hands-on workshops, competitions and full event support — pick the format that suits the occasion."
       />
       <HowItWorks />
+      <VlogsSection />
       <CTABanner
         title="Not sure which option fits?"
         subtitle="Register your school and we'll recommend a plan based on your class sizes and existing equipment."

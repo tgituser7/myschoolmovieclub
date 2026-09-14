@@ -37,6 +37,39 @@ export const indianStates = [
   "Puducherry",
 ] as const;
 
+export const vlogs = [
+  {
+    title: "How to Plan a Theatre Show",
+    desc: "A practical walkthrough of putting together a school theatre outing, from picking a film to managing the whole class on the day.",
+    duration: "8:14",
+  },
+  {
+    title: "What is Digital Cinema?",
+    desc: "A beginner-friendly explainer on digital projection and screening formats, and what a school actually needs to get started.",
+    duration: "6:45",
+  },
+  {
+    title: "Behind the Scenes of a School Screening",
+    desc: "A look at everything that happens before the lights go down — setup, promotion and getting the whole school in the room.",
+    duration: "5:20",
+  },
+  {
+    title: "Tips for Acting on Camera",
+    desc: "Simple, practical advice for students stepping in front of a camera for the first time in a filmmaking workshop.",
+    duration: "7:02",
+  },
+  {
+    title: "How to Judge a Debate Competition",
+    desc: "What to look for as a judge — structure, evidence and delivery — for a fair and useful school debate competition.",
+    duration: "6:10",
+  },
+  {
+    title: "Setting Up Backstage Sound & Lighting",
+    desc: "The basics of sound and lighting setup for a school event, explained for teams with no technical background.",
+    duration: "9:33",
+  },
+] as const;
+
 export const genres = [
   {
     title: "Kids-Oriented Movies",

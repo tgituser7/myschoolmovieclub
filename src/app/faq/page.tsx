@@ -13,6 +13,10 @@ const faqs = [
     a: "A membership club that brings curated, educational film screenings, tours and workshops into school life — turning screen time into curriculum, discussion and discovery.",
   },
   {
+    q: "How to join the club?",
+    a: "Head to our Join Us page and tell us how you'd like to join — as a member, through school registration, as a distributor, or as a partner — and our team will follow up with next steps. If you're a school and want to register directly, you can fill out our School Registration form instead.",
+  },
+  {
     q: "How do we get our school started?",
     a: "Register your school through our School Registration form, or send us an enquiry from the Join Us page. Our team will follow up to recommend a plan based on your class sizes and existing equipment.",
   },
