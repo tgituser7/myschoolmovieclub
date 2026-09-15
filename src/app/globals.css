@@ -111,6 +111,16 @@ body {
   box-shadow: 7px 7px 0 0 #ffffff;
 }
 
+/* ---------- Slider autoplay progress ---------- */
+@keyframes slider-progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 /* ---------- Marquee ticker ---------- */
 @keyframes marquee-scroll {
   from {
