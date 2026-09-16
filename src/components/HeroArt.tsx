@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { TicketIcon } from "./icons";
 
 export default function HeroArt() {
@@ -7,13 +6,15 @@ export default function HeroArt() {
       {/* rotated hard-shadow sticker frame */}
       <div className="relative -rotate-2 rounded-[1.75rem] border-4 border-navy bg-white p-2 shadow-hard sm:p-3">
         <div className="relative aspect-[5/3] overflow-hidden rounded-[1.25rem] bg-navy">
-          <Image
-            src="/topimg1.jpeg"
-            alt="Students at a My School Movie Club screening"
-            fill
-            priority
-            sizes="(min-width: 1024px) 560px, 90vw"
-            className="object-cover"
+          <video
+            src="/heroi.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            aria-label="Students at a My School Movie Club screening"
+            className="absolute inset-0 h-full w-full object-cover"
           />
 
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-navy/80 to-transparent" />

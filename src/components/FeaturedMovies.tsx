@@ -1,25 +1,39 @@
 import Image from "next/image";
 import type { ComponentType } from "react";
 import { ChevronRightIcon, PlayFilledIcon, ReelIcon } from "./icons";
-import {
-  DreamsArt,
-  GoMataArt,
-  HeritageArt,
-  KindnessArt,
-  PlanetArt,
-} from "./MovieArt";
+import { GoMataArt, KindnessArt } from "./MovieArt";
 
 type Movie = {
   title: string;
   duration?: string;
+  type?: string;
   Art?: ComponentType;
   image?: string;
+  fit?: "cover" | "contain";
 };
 
 const movies: Movie[] = [
   {
     title: "2 Little Indians",
     image: "/movies/2littleindians.jpeg",
+  },
+  {
+    title: "Back to School",
+    type: "Feature Film",
+    image: "/movies/Backto%20school.png",
+    fit: "cover",
+  },
+  {
+    title: "Villages of India",
+    type: "Documentary",
+    image: "/movies/villgofindi.png",
+    fit: "cover",
+  },
+  {
+    title: "Birth of the Internet",
+    type: "Documentary",
+    image: "/movies/birthofinternet.png",
+    fit: "cover",
   },
   {
     title: "Go Mata: Devotion & Responsibility",
@@ -30,21 +44,6 @@ const movies: Movie[] = [
     title: "The Power of Kindness",
     duration: "15:20",
     Art: KindnessArt,
-  },
-  {
-    title: "Save Our Planet",
-    duration: "14:32",
-    Art: PlanetArt,
-  },
-  {
-    title: "Our Rich Heritage",
-    duration: "13:18",
-    Art: HeritageArt,
-  },
-  {
-    title: "Small Steps Big Dreams",
-    duration: "11:50",
-    Art: DreamsArt,
   },
 ];
 
@@ -116,23 +115,33 @@ export default function FeaturedMovies({
             >
               <div className="relative aspect-video overflow-hidden border-b-2 border-navy bg-navy">
                 {m.image ? (
-                  <>
-                    <Image
-                      src={m.image}
-                      alt=""
-                      aria-hidden
-                      fill
-                      sizes="(min-width: 1024px) 33vw, 90vw"
-                      className="scale-110 object-cover object-top opacity-50 blur-lg"
-                    />
+                  m.fit === "cover" ? (
                     <Image
                       src={m.image}
                       alt={`${m.title} poster`}
                       fill
                       sizes="(min-width: 1024px) 33vw, 90vw"
-                      className="object-contain p-2 drop-shadow-lg"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                  </>
+                  ) : (
+                    <>
+                      <Image
+                        src={m.image}
+                        alt=""
+                        aria-hidden
+                        fill
+                        sizes="(min-width: 1024px) 33vw, 90vw"
+                        className="scale-110 object-cover object-top opacity-50 blur-lg"
+                      />
+                      <Image
+                        src={m.image}
+                        alt={`${m.title} poster`}
+                        fill
+                        sizes="(min-width: 1024px) 33vw, 90vw"
+                        className="object-contain p-2 drop-shadow-lg"
+                      />
+                    </>
+                  )
                 ) : (
                   m.Art && <m.Art />
                 )}
@@ -141,6 +150,11 @@ export default function FeaturedMovies({
                     <PlayFilledIcon className="h-4 w-4 translate-x-[1px]" />
                   </span>
                 </div>
+                {m.type ? (
+                  <span className="absolute bottom-2 left-2 rounded-full border-2 border-white bg-orange px-2 py-0.5 font-display text-[10px] font-extrabold uppercase tracking-wide text-navy shadow-hard-sm">
+                    {m.type}
+                  </span>
+                ) : null}
                 {m.duration ? (
                   <span className="absolute bottom-2 right-2 rounded-md border-2 border-navy bg-yellow px-1.5 py-0.5 font-display text-[11px] font-extrabold text-navy">
                     {m.duration}
