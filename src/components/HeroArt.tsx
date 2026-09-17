@@ -1,18 +1,60 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { TicketIcon } from "./icons";
 
+const VIDEO_START_SECONDS = 7;
+
 export default function HeroArt() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const seekToStart = () => {
+      if (video.currentTime < VIDEO_START_SECONDS) {
+        video.currentTime = VIDEO_START_SECONDS;
+      }
+    };
+    const onEnded = () => {
+      video.currentTime = VIDEO_START_SECONDS;
+      video.play();
+    };
+
+    // With SSR + autoPlay, the browser can start loading/playing the video
+    // from the initial HTML before this effect attaches — so metadata may
+    // already be available (or playback already past 0s) by the time we get here.
+    if (video.readyState >= 1) {
+      seekToStart();
+    } else {
+      video.addEventListener("loadedmetadata", seekToStart, { once: true });
+    }
+    video.addEventListener("ended", onEnded);
+
+    return () => {
+      video.removeEventListener("loadedmetadata", seekToStart);
+      video.removeEventListener("ended", onEnded);
+    };
+  }, []);
+
   return (
     <div className="relative px-3 pb-14 pt-4 sm:px-6">
       {/* rotated hard-shadow sticker frame */}
       <div className="relative -rotate-2 rounded-[1.75rem] border-4 border-navy bg-white p-2 shadow-hard sm:p-3">
         <div className="relative aspect-[5/3] overflow-hidden rounded-[1.25rem] bg-navy">
           <video
-            src="/heroig.mov"
+            ref={videoRef}
+            src="/heroi.mp4"
             autoPlay
             muted
-            loop
             playsInline
             preload="auto"
+            onLoadedMetadata={seekToStart}
+            onEnded={(e) => {
+              seekToStart();
+              e.currentTarget.play();
+            }}
             aria-label="Students at a My School Movie Club screening"
             className="absolute inset-0 h-full w-full object-cover"
           />
