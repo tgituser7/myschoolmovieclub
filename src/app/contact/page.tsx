@@ -23,7 +23,7 @@ const info = [
   },
   {
     label: "Office",
-    value: "Add your city / regional office address here",
+    value: "Mumbai",
     icon: MapPinIcon,
     bg: "bg-cat-red",
   },
@@ -33,14 +33,14 @@ const leadership = [
   {
     name: "Ravi Bhatia",
     title: "Founder",
-    email: "ravi.bhatia@myschoolmovieclub.example",
+    email: "ravi.bhatia@myschoolmovieclub",
     initials: "RB",
     bg: "bg-cat-blue",
   },
   {
     name: "Hriday Bhatia",
     title: "CEO",
-    email: "hriday.bhatia@myschoolmovieclub.example",
+    email: "hriday.bhatia@myschoolmovieclub",
     initials: "HB",
     bg: "bg-cat-orange",
   },
