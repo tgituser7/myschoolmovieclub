@@ -7,12 +7,12 @@ const VIDEO_START_SECONDS = 7;
 
 export default function HeroArt() {
   const videoRef = useRef<HTMLVideoElement>(null);
-
+  let seekToStart:any
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    const seekToStart = () => {
+    seekToStart = () => {
       if (video.currentTime < VIDEO_START_SECONDS) {
         video.currentTime = VIDEO_START_SECONDS;
       }
