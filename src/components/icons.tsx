@@ -298,7 +298,7 @@ export function MailIcon(props: IconProps) {
   );
 }
 
-export function PhoneIcon(props: IconProps) {
+export function  MobileIcon(props: IconProps) {
   return (
     <Base {...props}>
       <path d="M6 3.5h3l1.5 4-2 1.5a11 11 0 005 5l1.5-2 4 1.5v3a2 2 0 01-2.2 2C10.5 18.7 5.3 13.5 4 7.7A2 2 0 016 3.5z" />

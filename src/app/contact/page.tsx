@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageBanner from "@/components/PageBanner";
 import ContactForm from "@/components/ContactForm";
-import { MailIcon, MapPinIcon, PhoneIcon } from "@/components/icons";
+import { MailIcon, MapPinIcon, MobileIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Contact — My School Movie Club",
@@ -11,14 +11,14 @@ export const metadata: Metadata = {
 const info = [
   {
     label: "Email",
-    value: "hello@myschoolmovieclub.example",
+    value: "myschoolmovieclub@gmail.com",
     icon: MailIcon,
     bg: "bg-cat-blue",
   },
   {
-    label: "Phone",
-    value: "+91 00000 00000",
-    icon: PhoneIcon,
+    label: "Mobile",
+    value: "+91 84518 97298",
+    icon: MobileIcon,
     bg: "bg-cat-teal",
   },
   {
