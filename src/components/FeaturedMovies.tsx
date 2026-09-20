@@ -39,7 +39,7 @@ const movies: Movie[] = [
   {
     title: "Mahaprabhu Jagannath",
     type: "Animated",
-    image: "/movies/Mahaprabhujagannath.png",
+    image: "/movies/Mahaprabhujagannathimg.png",
   },
   {
     title: "Go Mata: Devotion & Responsibility",
