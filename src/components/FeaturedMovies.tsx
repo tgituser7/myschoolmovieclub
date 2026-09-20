@@ -36,6 +36,11 @@ const movies: Movie[] = [
     fit: "cover",
   },
   {
+    title: "Mahaprabhu Jagannath",
+    type: "Animated",
+    image: "/movies/Mahaprabhu Jagannath.png",
+  },
+  {
     title: "Go Mata: Devotion & Responsibility",
     duration: "12:45",
     Art: GoMataArt,
