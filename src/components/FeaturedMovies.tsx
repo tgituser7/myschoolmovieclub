@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { ComponentType } from "react";
 import { ChevronRightIcon, PlayFilledIcon, ReelIcon } from "./icons";
 import { GoMataArt, KindnessArt } from "./MovieArt";
@@ -10,7 +11,8 @@ type Movie = {
   Art?: ComponentType;
   image?: string;
   fill?: boolean;
-  badgeTop?: boolean;
+  shiftUp?: boolean;
+  isNew?: boolean;
 };
 
 const movies: Movie[] = [
@@ -29,8 +31,8 @@ const movies: Movie[] = [
     title: "Villages of India",
     type: "Documentary",
     image: "/movies/vilageofindiaReacty.jpeg",
+    shiftUp: true,
     fill: true,
-    badgeTop: true,
   },
   {
     title: "Birth of the Internet",
@@ -43,6 +45,7 @@ const movies: Movie[] = [
     type: "Animated",
     image: "/movies/Mahaprabhujagannathimg.png",
     fill: true,
+    isNew: true,
   },
   // {
   //   title: "Go Mata: Devotion & Responsibility",
@@ -115,10 +118,9 @@ export default function FeaturedMovies({
 
         <div className="mt-10 grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {movies.map((m, i) => (
-            <a
+            <div
               key={m.title}
-              href="#join"
-              className={`group overflow-hidden rounded-2xl border-2 border-navy bg-white shadow-hard transition-transform hover:-translate-y-1 hover:rotate-0 ${
+              className={`group flex flex-col overflow-hidden rounded-2xl border-2 border-navy bg-white shadow-hard transition-transform hover:-translate-y-1 hover:rotate-0 ${
                 i % 2 === 0 ? "sm:rotate-1" : "sm:-rotate-1"
               }`}
             >
@@ -130,7 +132,7 @@ export default function FeaturedMovies({
                       alt={`${m.title} poster`}
                       fill
                       sizes="(min-width: 1024px) 25vw, 90vw"
-                      className="object-cover"
+                      className={`object-cover ${m.shiftUp ? "-translate-y-[6%]" : ""}`}
                     />
                   ) : (
                     <>
@@ -160,7 +162,7 @@ export default function FeaturedMovies({
                   </span>
                 </div>
                 {m.type ? (
-                  <span className={`absolute left-2 ${m.badgeTop ? "top-2" : "bottom-2"} rounded-full border-2 border-white bg-orange px-2 py-0.5 font-display text-[10px] font-extrabold uppercase tracking-wide text-navy shadow-hard-sm`}>
+                  <span className="absolute bottom-2 left-2 rounded-full border-2 border-white bg-orange px-2 py-0.5 font-display text-[10px] font-extrabold uppercase tracking-wide text-navy shadow-hard-sm">
                     {m.type}
                   </span>
                 ) : null}
@@ -170,12 +172,25 @@ export default function FeaturedMovies({
                   </span>
                 ) : null}
               </div>
-              <div className="p-4">
-                <p className="font-display text-sm font-bold leading-snug text-navy">
-                  {m.title}
-                </p>
+              <div className="flex flex-1 flex-col gap-3 p-4">
+                <div className="flex items-start justify-between gap-2">
+                  <p className="font-display text-sm font-bold leading-snug text-navy">
+                    {m.title}
+                  </p>
+                  {m.isNew ? (
+                    <span className="shrink-0 rounded-full border-2 border-navy bg-yellow px-2 py-0.5 font-display text-[10px] font-extrabold uppercase tracking-wide text-navy">
+                      New
+                    </span>
+                  ) : null}
+                </div>
+                <Link
+                  href="/book-service"
+                  className="mt-auto flex items-center justify-center rounded-full border-2 border-navy bg-orange px-4 py-2 font-display text-xs font-extrabold uppercase tracking-wide text-navy shadow-hard-sm transition-transform hover:-translate-y-0.5"
+                >
+                  Book Now
+                </Link>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>
