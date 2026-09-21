@@ -50,11 +50,6 @@ export default function HeroArt() {
             muted
             playsInline
             preload="auto"
-            onLoadedMetadata={seekToStart}
-            onEnded={(e) => {
-              seekToStart();
-              e.currentTarget.play();
-            }}
             aria-label="Students at a My School Movie Club screening"
             className="absolute inset-0 h-full w-full object-cover"
           />

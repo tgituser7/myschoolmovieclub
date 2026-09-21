@@ -9,48 +9,51 @@ type Movie = {
   type?: string;
   Art?: ComponentType;
   image?: string;
-  fit?: "cover" | "contain";
+  fill?: boolean;
+  badgeTop?: boolean;
 };
 
 const movies: Movie[] = [
   {
     title: "2 Little Indians",
     image: "/movies/2littleindians.jpeg",
+    fill: true,
   },
   {
     title: "Back to School",
     type: "Feature Film",
-    image: "/movies/Backto%20school.png",
-    fit: "cover",
+    image: "/movies/backtoschoolrect.jpeg",
+    fill: true,
   },
   {
     title: "Villages of India",
     type: "Documentary",
-    image: "/movies/villgofindi.png",
-    fit: "cover",
+    image: "/movies/vilageofindiaReacty.jpeg",
+    fill: true,
+    badgeTop: true,
   },
   {
     title: "Birth of the Internet",
     type: "Documentary",
-    image: "/movies/birthofinternet.png",
-    fit: "cover",
+    image: "/movies/BOIract.jpeg",
   },
 
   {
     title: "Mahaprabhu Jagannath",
     type: "Animated",
     image: "/movies/Mahaprabhujagannathimg.png",
+    fill: true,
   },
-  {
-    title: "Go Mata: Devotion & Responsibility",
-    duration: "12:45",
-    Art: GoMataArt,
-  },
-  {
-    title: "The Power of Kindness",
-    duration: "15:20",
-    Art: KindnessArt,
-  },
+  // {
+  //   title: "Go Mata: Devotion & Responsibility",
+  //   duration: "12:45",
+  //   Art: GoMataArt,
+  // },
+  // {
+  //   title: "The Power of Kindness",
+  //   duration: "15:20",
+  //   Art: KindnessArt,
+  // },
 ];
 
 export default function FeaturedMovies({
@@ -110,7 +113,7 @@ export default function FeaturedMovies({
           </a>
         </div>
 
-        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {movies.map((m, i) => (
             <a
               key={m.title}
@@ -119,15 +122,15 @@ export default function FeaturedMovies({
                 i % 2 === 0 ? "sm:rotate-1" : "sm:-rotate-1"
               }`}
             >
-              <div className="relative aspect-video overflow-hidden border-b-2 border-navy bg-navy">
+              <div className="relative aspect-[3/4] overflow-hidden border-b-2 border-navy bg-navy">
                 {m.image ? (
-                  m.fit === "cover" ? (
+                  m.fill ? (
                     <Image
                       src={m.image}
                       alt={`${m.title} poster`}
                       fill
-                      sizes="(min-width: 1024px) 33vw, 90vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(min-width: 1024px) 25vw, 90vw"
+                      className="object-cover"
                     />
                   ) : (
                     <>
@@ -137,7 +140,7 @@ export default function FeaturedMovies({
                         aria-hidden
                         fill
                         sizes="(min-width: 1024px) 33vw, 90vw"
-                        className="scale-110 object-cover object-top opacity-50 blur-lg"
+                        className="scale-110 object-cover object-center opacity-50 blur-lg"
                       />
                       <Image
                         src={m.image}
@@ -157,7 +160,7 @@ export default function FeaturedMovies({
                   </span>
                 </div>
                 {m.type ? (
-                  <span className="absolute bottom-2 left-2 rounded-full border-2 border-white bg-orange px-2 py-0.5 font-display text-[10px] font-extrabold uppercase tracking-wide text-navy shadow-hard-sm">
+                  <span className={`absolute left-2 ${m.badgeTop ? "top-2" : "bottom-2"} rounded-full border-2 border-white bg-orange px-2 py-0.5 font-display text-[10px] font-extrabold uppercase tracking-wide text-navy shadow-hard-sm`}>
                     {m.type}
                   </span>
                 ) : null}
